@@ -1,0 +1,784 @@
+/* =============================================================================
+   ARCTA GROUP — SITE CONTENT & IMAGE CONFIG
+   -----------------------------------------------------------------------------
+   Single source of truth for all copy + image slots across the website.
+
+   TO ADD / SWAP IMAGES:
+   1. Drop your file into the matching folder under /public/images/:
+        - hero      -> /public/images/hero/
+        - about     -> /public/images/about/
+        - services  -> /public/images/services/
+        - snagging  -> /public/images/snagging/
+   2. Point the matching `image` field below at it, e.g.
+        image: "/images/hero/hero.jpg"
+   Until a real file exists, components render a premium gradient placeholder,
+   so the site always looks finished.
+   ========================================================================== */
+
+export const SITE_URL = "https://arctagroup.ae";
+
+export const business = {
+  name: "Arcta Group",
+  legalName: "Arcta Group",
+  tagline: "Premium Property Services Across The UAE",
+  shortTagline: "Where reliability meets professional service",
+  region: "United Arab Emirates",
+  city: "Dubai",
+  phoneDisplay: "+971 50 554 0919",
+  phoneHref: "tel:+971505540919",
+  whatsapp: "https://wa.me/971505540919",
+  whatsappMessage:
+    "https://wa.me/971505540919?text=Hi%20Arcta%20Group%2C%20I%27d%20like%20to%20request%20a%20service%20for%20my%20property.",
+  email: "alie@arctagroup.ae",
+  emailHref: "mailto:alie@arctagroup.ae",
+  instagramHandle: "arcta.ae",
+  instagramUrl: "https://www.instagram.com/arcta.ae/",
+  hours: "Sun–Sat, 24/7 emergency support",
+} as const;
+
+/* ---------- NAVIGATION ---------- */
+export const nav = [
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Snagging", href: "/snagging-inspections" },
+  { label: "Property Managers", href: "/property-managers" },
+  { label: "Contracts", href: "/#pricing" },
+  { label: "Contact", href: "/#contact" },
+] as const;
+
+export const serviceNav = [
+  { label: "AC Maintenance & Cleaning", href: "/ac-maintenance" },
+  { label: "Duct & Coil Cleaning", href: "/duct-coil-cleaning" },
+  { label: "Property Maintenance", href: "/property-maintenance" },
+  { label: "Snagging Inspections", href: "/snagging-inspections" },
+  { label: "Annual Contracts", href: "/annual-maintenance-contracts" },
+] as const;
+
+/* ---------- HERO ---------- */
+export const hero = {
+  image: "/images/hero/hero.jpg",
+  imageAlt:
+    "Uniformed Arcta Group technician servicing an air conditioning unit in a premium Dubai villa",
+  eyebrow: "UAE Property Services",
+  headline: "Professional Property Services Across The UAE",
+  highlight: ["Property", "Services"],
+  subheadline:
+    "Premium AC maintenance, duct cleaning, snagging inspections and home maintenance services trusted by property managers, landlords and homeowners.",
+  primaryCta: { label: "Request Service", href: "/#contact" },
+  secondaryCta: { label: "View Services", href: "/#services" },
+  trustIndicators: [
+    { label: "24hr Response Time", icon: "clock" },
+    { label: "UAE Wide Coverage", icon: "pin" },
+    { label: "Fully Documented Jobs", icon: "clipboard" },
+    { label: "Uniformed Technicians", icon: "badge" },
+  ],
+} as const;
+
+/* ---------- TRUST / STATS BAR ---------- */
+export type Stat = { value: number; suffix?: string; prefix?: string; label: string };
+
+export const stats: Stat[] = [
+  { value: 24, suffix: "hr", label: "Response time" },
+  { value: 100, suffix: "%", label: "Jobs documented" },
+  { value: 7, suffix: "", label: "Emirates covered" },
+  { value: 1, prefix: "#", label: "Direct line to our team" },
+];
+
+/* ---------- ABOUT ---------- */
+export const about = {
+  eyebrow: "About Arcta Group",
+  title: "Premium service, delivered with precision",
+  paragraphs: [
+    "Arcta Group was founded with a single, clear purpose — to bring a genuinely professional standard to property maintenance across the UAE. We exist because property managers, landlords and homeowners deserve a contractor they can actually rely on.",
+    "Every technician arrives in full uniform, communicates in English, documents every job with before and after photography, and leaves the property exactly as they found it. You deal directly with our founder — never a call centre, never an automated system.",
+    "One call. One standard. Every time.",
+  ],
+  signature: "— Founder, Arcta Group",
+  image: "/images/about/team.jpg",
+  imageAlt: "Arcta Group founder and uniformed maintenance team in Dubai",
+  pillars: [
+    {
+      number: "01",
+      title: "Uniformed Professionals",
+      description:
+        "Every technician arrives branded, correctly presented, in the right footwear and ready to work. No excuses, no exceptions.",
+      icon: "badge",
+    },
+    {
+      number: "02",
+      title: "English Communication",
+      description:
+        "We invest in our technicians. Clear English means every tenant and landlord interaction is professional and easy.",
+      icon: "chat",
+    },
+    {
+      number: "03",
+      title: "Full Job Documentation",
+      description:
+        "Before and after photos on every single visit, with same-day reports sent straight to your inbox. Complete transparency.",
+      icon: "clipboard",
+    },
+    {
+      number: "04",
+      title: "Direct Communication",
+      description:
+        "You always have a direct line to our team. Fast responses, no automated systems and no being passed around.",
+      icon: "phone",
+    },
+  ],
+} as const;
+
+/* ---------- SERVICES ---------- */
+export type Service = {
+  slug: string;
+  title: string;
+  short: string;
+  description: string;
+  icon: string;
+  features: string[];
+  href: string;
+  featured?: boolean;
+};
+
+export const services: Service[] = [
+  {
+    slug: "ac-maintenance",
+    title: "AC Maintenance & Cleaning",
+    short: "Routine servicing that keeps cooling efficient and reliable.",
+    description:
+      "Comprehensive AC servicing recommended twice yearly for every unit — keeping your cooling efficient, healthy and reliable through the UAE summer.",
+    icon: "ac",
+    features: [
+      "Filter cleaning",
+      "Coil cleaning",
+      "Drain flushing",
+      "Fan inspections",
+      "System performance checks",
+    ],
+    href: "/ac-maintenance",
+  },
+  {
+    slug: "ac-repairs",
+    title: "AC Repairs & Callouts",
+    short: "Fast, fully documented diagnostics and emergency repairs.",
+    description:
+      "When a unit fails, we respond fast. Accurate diagnostics and fully documented repairs get your cooling back online with minimal disruption.",
+    icon: "wrench",
+    features: [
+      "Refrigerant recharge",
+      "Capacitor replacement",
+      "PCB faults",
+      "Emergency repairs",
+      "Full diagnostics",
+    ],
+    href: "/ac-maintenance",
+  },
+  {
+    slug: "chemical-deep-clean",
+    title: "Chemical AC Deep Cleaning",
+    short: "Intensive wash that restores performance and air quality.",
+    description:
+      "An intensive chemical wash for units with heavy buildup, mould or long service gaps — restoring full cooling performance and healthier air.",
+    icon: "droplet",
+    features: [
+      "Improved air quality",
+      "Better cooling performance",
+      "Removal of mould and bacteria",
+      "Restored airflow",
+    ],
+    href: "/ac-maintenance",
+  },
+  {
+    slug: "duct-cleaning",
+    title: "Duct & Ventilation Cleaning",
+    short: "Cleaner air and better efficiency for dusty UAE environments.",
+    description:
+      "Full duct and vent system cleaning for improved indoor air quality and system efficiency — essential in the UAE's dusty climate.",
+    icon: "duct",
+    features: [
+      "Air duct cleaning",
+      "Vent cleaning",
+      "Indoor air quality improvements",
+      "Dust and debris removal",
+    ],
+    href: "/duct-coil-cleaning",
+  },
+  {
+    slug: "coil-cleaning",
+    title: "Coil Cleaning",
+    short: "Lower energy bills and stronger, more efficient cooling.",
+    description:
+      "Dedicated evaporator and condenser coil cleaning that lowers energy consumption and restores strong, efficient cooling output.",
+    icon: "coil",
+    features: [
+      "Energy savings",
+      "Improved efficiency",
+      "Better cooling output",
+      "Extended equipment life",
+    ],
+    href: "/duct-coil-cleaning",
+  },
+  {
+    slug: "home-maintenance",
+    title: "Home Maintenance",
+    short: "Trusted handyman and upkeep across your property.",
+    description:
+      "Reliable handyman services and general repairs that keep your property in top condition — handled by trusted, uniformed professionals.",
+    icon: "tools",
+    features: [
+      "Handyman services",
+      "General repairs",
+      "Property upkeep",
+      "Preventative maintenance",
+    ],
+    href: "/property-maintenance",
+  },
+  {
+    slug: "snagging-inspections",
+    title: "Snagging Inspections",
+    short: "Protect your investment with detailed property inspections.",
+    description:
+      "Detailed, independent property inspections that identify defects before you commit — with comprehensive photographic reporting you can act on.",
+    icon: "search",
+    features: [
+      "New build snagging inspections",
+      "Pre-handover inspections",
+      "Resale inspections",
+      "Detailed reporting",
+      "Defect identification",
+    ],
+    href: "/snagging-inspections",
+    featured: true,
+  },
+];
+
+/* ---------- WHY CHOOSE US ---------- */
+export type Reason = { title: string; description: string; icon: string };
+
+export const reasons: Reason[] = [
+  {
+    title: "Professional Standards",
+    description:
+      "Uniformed, correctly presented technicians who treat every property with respect — a standard rarely found in the UAE maintenance market.",
+    icon: "badge",
+  },
+  {
+    title: "English Communication",
+    description:
+      "Clear, fluent English on every job means tenant and landlord interactions are always professional and easy to follow.",
+    icon: "chat",
+  },
+  {
+    title: "Full Documentation",
+    description:
+      "Before and after reports on every visit, sent same day — everything you need to report back to landlords without chasing us.",
+    icon: "clipboard",
+  },
+  {
+    title: "Reliable Response Times",
+    description:
+      "We confirm every appointment, arrive when we say we will, and respond fast. Your tenants never have to wait and wonder.",
+    icon: "clock",
+  },
+  {
+    title: "Direct Contact",
+    description:
+      "One direct line to our team — no call centres, no automated systems, no being passed around. One message and it gets handled.",
+    icon: "phone",
+  },
+  {
+    title: "Quality Assurance",
+    description:
+      "Consistent standards on every visit, backed by documentation and a founder who is personally accountable for every job.",
+    icon: "shield",
+  },
+];
+
+/* ---------- PROPERTY MANAGERS ---------- */
+export const propertyManagers = {
+  eyebrow: "For Property Professionals",
+  title: "A maintenance partner built for portfolios",
+  intro:
+    "Whether you manage 5 properties or 500, Arcta Group is the dependable, fully documented partner that makes you look good to your landlords and owners.",
+  audiences: [
+    "Property management companies",
+    "Villa communities",
+    "Holiday home & short-term rental operators",
+    "Real estate agencies",
+  ],
+  features: [
+    {
+      title: "Service Contracts",
+      description:
+        "Fixed, transparent annual contracts tailored to your portfolio — predictable costs with no surprises.",
+      icon: "document",
+    },
+    {
+      title: "Maintenance Plans",
+      description:
+        "Scheduled preventative maintenance that keeps units healthy and reduces emergency callouts across your buildings.",
+      icon: "calendar",
+    },
+    {
+      title: "Reporting Systems",
+      description:
+        "Same-day photographic reports and monthly dashboards so you always have evidence ready for owners.",
+      icon: "chart",
+    },
+    {
+      title: "Dedicated Account Management",
+      description:
+        "A single, accountable point of contact who knows your portfolio and responds fast — every time.",
+      icon: "headset",
+    },
+  ],
+} as const;
+
+/* ---------- ANNUAL MAINTENANCE CONTRACTS ---------- */
+export type PricingTier = {
+  name: string;
+  priceLabel: string;
+  priceNote: string;
+  description: string;
+  features: string[];
+  cta: { label: string; href: string };
+  highlighted?: boolean;
+  badge?: string;
+};
+
+export const pricing: PricingTier[] = [
+  {
+    name: "Standard",
+    priceLabel: "Tailored Quote",
+    priceNote: "based on your property",
+    description: "Essential cover for homeowners and smaller portfolios.",
+    features: [
+      "Two full services annually",
+      "Filter cleaning each visit",
+      "Coil cleaning each visit",
+      "Drain checks and flush",
+      "Performance report after each visit",
+      "Priority booking",
+    ],
+    cta: { label: "Get a Quote", href: "/#contact" },
+  },
+  {
+    name: "Premium",
+    priceLabel: "Tailored Quote",
+    priceNote: "based on your portfolio",
+    description: "Our most popular plan for landlords and managers.",
+    features: [
+      "Everything in Standard",
+      "Priority callouts",
+      "Refrigerant level checks",
+      "4-hour priority response",
+      "Same-day job reports",
+      "Dedicated account support",
+    ],
+    cta: { label: "Get a Quote", href: "/#contact" },
+    highlighted: true,
+    badge: "Most Popular",
+  },
+  {
+    name: "Enterprise",
+    priceLabel: "Bespoke",
+    priceNote: "volume pricing — 50+ units",
+    description: "Built for large property portfolios and communities.",
+    features: [
+      "Bespoke pricing for large portfolios",
+      "Dedicated technician allocation",
+      "Monthly reporting dashboard",
+      "24/7 emergency support cover",
+      "Quarterly review meetings",
+    ],
+    cta: { label: "Talk To Us", href: "/#contact" },
+  },
+];
+
+/* ---------- SNAGGING ---------- */
+export type SnaggingStat = {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  /** Use when the figure should not animate (e.g. "0"). */
+  display?: string;
+};
+
+export const snaggingStats: SnaggingStat[] = [
+  { value: 100, suffix: "+", label: "Defects found on a typical new villa" },
+  { value: 7, suffix: "yr", label: "DLP developer liability period in the UAE" },
+  { value: 0, prefix: "AED ", display: "0", label: "Cost to you when defects are fixed pre-handover" },
+];
+
+export const snagging = {
+  eyebrow: "Snagging Inspections",
+  title: "Protect your property investment",
+  intro:
+    "Before you take handover or complete a purchase, an independent snagging inspection uncovers the defects developers and sellers would rather you didn't see — saving you significant money and stress.",
+  audiences: [
+    { label: "Property Buyers", icon: "key" },
+    { label: "Property Sellers", icon: "tag" },
+    { label: "Real Estate Agencies", icon: "building" },
+    { label: "Investors", icon: "chart" },
+  ],
+  types: [
+    {
+      title: "New Build Snagging",
+      description:
+        "Catch construction and finishing defects in newly built villas and apartments before they become your problem.",
+    },
+    {
+      title: "Pre-Handover Inspections",
+      description:
+        "Independent inspection before you accept keys, so the developer fixes issues on their cost, not yours.",
+    },
+    {
+      title: "Resale Inspections",
+      description:
+        "Know exactly what you're buying — a full condition report on resale properties before you commit.",
+    },
+    {
+      title: "Detailed Reporting",
+      description:
+        "Every defect photographed, categorised and clearly described in a report you can hand straight to the developer.",
+    },
+  ],
+  commonIssues: [
+    "Poor paint and finishing",
+    "Door and window misalignment",
+    "AC and ventilation faults",
+    "Plumbing and drainage leaks",
+    "Electrical and socket faults",
+    "Tiling and grouting defects",
+    "Water damage and damp",
+    "Joinery and cabinetry gaps",
+  ],
+  checklistTitle: "What we inspect",
+  checklist: [
+    { area: "Air Conditioning", items: ["Cooling performance", "Drainage", "Thermostat operation"] },
+    { area: "Electrical", items: ["Sockets & switches", "Distribution board", "Lighting circuits"] },
+    { area: "Plumbing", items: ["Water pressure", "Leaks & drainage", "Hot water system"] },
+    { area: "Finishes", items: ["Paint & walls", "Tiling & grout", "Doors & windows"] },
+    { area: "Joinery", items: ["Kitchen units", "Wardrobes", "Skirting & trims"] },
+    { area: "External", items: ["Facade & render", "Balconies", "Waterproofing"] },
+  ],
+  image: "/images/snagging/inspection.jpg",
+  imageAlt: "Arcta Group inspector documenting defects during a property snagging inspection in Dubai",
+} as const;
+
+/* ---------- PROCESS ---------- */
+export type ProcessStep = { number: string; title: string; description: string; icon: string };
+
+export const process: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Request Service",
+    description:
+      "Message us on WhatsApp, call, or send the form. You reach our team directly — no call centre.",
+    icon: "phone",
+  },
+  {
+    number: "02",
+    title: "Schedule Visit",
+    description:
+      "We confirm a convenient appointment and a free, itemised quote, usually returned within the hour.",
+    icon: "calendar",
+  },
+  {
+    number: "03",
+    title: "Inspection & Work",
+    description:
+      "Uniformed technicians arrive on time, carry out the work to a high standard, and respect your property.",
+    icon: "wrench",
+  },
+  {
+    number: "04",
+    title: "Documentation",
+    description:
+      "Before and after photos plus a same-day written report land in your inbox. Complete transparency.",
+    icon: "clipboard",
+  },
+  {
+    number: "05",
+    title: "Follow-Up Support",
+    description:
+      "We stay in touch, track recurring needs and keep your property covered all year round.",
+    icon: "shield",
+  },
+];
+
+/* ---------- TESTIMONIALS (CMS-ready placeholders) ---------- */
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  rating: number;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Finally a maintenance partner I don't have to chase. Reports arrive the same day and the technicians are always presentable. It makes reporting back to owners effortless.",
+    name: "Property Manager",
+    role: "Villa community, Dubai",
+    rating: 5,
+  },
+  {
+    quote:
+      "Their snagging report saved us a fortune before handover. Every defect was photographed and clearly explained — the developer fixed everything at their cost.",
+    name: "Homeowner",
+    role: "New build villa, Dubai Hills",
+    rating: 5,
+  },
+  {
+    quote:
+      "Professional, on time and genuinely reliable. The annual contract gives us predictable costs across the whole portfolio with zero surprises.",
+    name: "Real Estate Agency",
+    role: "Short-term rentals, Dubai Marina",
+    rating: 5,
+  },
+  {
+    quote:
+      "The difference in air quality after the chemical clean and duct service was immediate. Communication in English throughout made the whole process easy.",
+    name: "Landlord",
+    role: "Apartment portfolio, Abu Dhabi",
+    rating: 5,
+  },
+];
+
+/* ---------- SERVICE AREAS ---------- */
+export type ServiceArea = { name: string; description: string };
+
+export const serviceAreas: ServiceArea[] = [
+  {
+    name: "Dubai",
+    description:
+      "AC maintenance, duct cleaning, snagging and property maintenance across Dubai's villa communities and residential towers.",
+  },
+  {
+    name: "Abu Dhabi",
+    description:
+      "Reliable, documented property services for landlords and managers throughout the capital.",
+  },
+  {
+    name: "Sharjah",
+    description:
+      "Professional AC servicing and home maintenance for Sharjah homeowners and portfolios.",
+  },
+  {
+    name: "Ajman",
+    description:
+      "Trusted maintenance and inspection services for properties across Ajman.",
+  },
+  {
+    name: "Ras Al Khaimah",
+    description:
+      "Premium AC and property care for villas and holiday homes in RAK.",
+  },
+  {
+    name: "UAE Wide",
+    description:
+      "Whatever the emirate, Arcta Group delivers one consistent professional standard.",
+  },
+];
+
+/* ---------- FAQ ---------- */
+export type Faq = { question: string; answer: string };
+
+export const faqs: Faq[] = [
+  {
+    question: "How often should AC units be serviced in the UAE?",
+    answer:
+      "We recommend a full service twice a year for every unit. The UAE's heat and dust place heavy demand on AC systems, and regular maintenance keeps them efficient, healthy and far less likely to fail when you need them most.",
+  },
+  {
+    question: "What is a snagging inspection and why does it matter?",
+    answer:
+      "A snagging inspection is an independent survey of a property — usually a new build before handover — that identifies construction and finishing defects. Because UAE developers carry a liability period, raising defects before handover means they're typically fixed at the developer's cost rather than yours.",
+  },
+  {
+    question: "Do you provide reports after every job?",
+    answer:
+      "Yes. Every visit includes before and after photography and a same-day written report sent straight to your inbox — complete transparency you can pass straight to landlords or owners.",
+  },
+  {
+    question: "Which areas of the UAE do you cover?",
+    answer:
+      "We serve Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah and the wider UAE, delivering the same consistent professional standard across every emirate.",
+  },
+  {
+    question: "Do you offer contracts for property managers?",
+    answer:
+      "Absolutely. We offer Standard, Premium and Enterprise annual maintenance contracts tailored to your portfolio, with fixed transparent pricing, priority response and dedicated account management.",
+  },
+  {
+    question: "How quickly can you respond to an emergency?",
+    answer:
+      "We offer 24-hour response times and prioritised callouts for contract clients, with same-day attendance for urgent issues wherever possible.",
+  },
+];
+
+/* ---------- PAGE-SPECIFIC FAQs ---------- */
+export const acFaqs: Faq[] = [
+  {
+    question: "How often should I service my AC in Dubai?",
+    answer:
+      "Twice a year is ideal for the UAE climate. Regular servicing keeps units efficient, lowers energy bills, improves air quality and dramatically reduces the chance of a breakdown during peak summer.",
+  },
+  {
+    question: "What is included in an AC maintenance visit?",
+    answer:
+      "A full service covers filter cleaning, coil cleaning, drainage flushing, fan inspection and a complete system performance check — finished with a before-and-after photographic report.",
+  },
+  {
+    question: "Do you offer emergency AC repairs?",
+    answer:
+      "Yes. We provide fast diagnostics and emergency callouts for issues like refrigerant loss, capacitor failure, PCB faults and drainage blockages, with same-day attendance wherever possible.",
+  },
+  {
+    question: "What is chemical AC deep cleaning?",
+    answer:
+      "An intensive chemical wash of the indoor and outdoor units that removes mould, bacteria and stubborn buildup. It restores full cooling performance and noticeably improves indoor air quality — ideal for units with long service gaps.",
+  },
+];
+
+export const ductFaqs: Faq[] = [
+  {
+    question: "Why is duct cleaning important in the UAE?",
+    answer:
+      "The UAE's dusty environment means ducts accumulate fine dust, debris and allergens quickly. Cleaning them improves indoor air quality, reduces strain on your system and helps it run more efficiently.",
+  },
+  {
+    question: "What are the benefits of coil cleaning?",
+    answer:
+      "Clean evaporator and condenser coils transfer heat far more efficiently. The result is lower energy consumption, stronger cooling output and a longer lifespan for your equipment.",
+  },
+  {
+    question: "How often should ducts and coils be cleaned?",
+    answer:
+      "We typically recommend duct and coil cleaning annually, or more frequently for properties with heavy use, pets, or located in particularly dusty areas.",
+  },
+];
+
+export const propertyFaqs: Faq[] = [
+  {
+    question: "What home maintenance services do you offer?",
+    answer:
+      "We handle handyman services, general repairs, property upkeep and scheduled preventative maintenance — all carried out by uniformed, English-speaking professionals.",
+  },
+  {
+    question: "Do you offer maintenance for property portfolios?",
+    answer:
+      "Yes. We work with property managers, landlords and holiday-home operators on tailored maintenance plans and annual contracts with fixed, transparent pricing.",
+  },
+  {
+    question: "Will I receive reports after each job?",
+    answer:
+      "Always. Every visit includes before-and-after photography and a same-day written report, so you have complete transparency and evidence to pass to owners.",
+  },
+];
+
+export const snaggingFaqs: Faq[] = [
+  {
+    question: "What is a snagging inspection?",
+    answer:
+      "A snagging inspection is an independent, detailed survey of a property — usually a new build before handover — that identifies construction, finishing and system defects so they can be rectified.",
+  },
+  {
+    question: "When should I book a snagging inspection?",
+    answer:
+      "Ideally before you take handover of a new build, so defects are raised while the developer is still liable and obligated to fix them at their own cost. We also inspect resale properties before purchase.",
+  },
+  {
+    question: "What happens after the inspection?",
+    answer:
+      "You receive a comprehensive photographic report with every defect categorised and clearly described. You can hand this straight to the developer or seller to have the issues resolved.",
+  },
+  {
+    question: "Can the developer refuse to fix the defects?",
+    answer:
+      "In the UAE, developers carry a defects liability period after handover. A documented snagging report gives you the evidence needed to ensure legitimate defects are addressed.",
+  },
+];
+
+/* ---------- SERVICE BENEFITS (sub-pages) ---------- */
+export type Benefit = { title: string; description: string; icon: string };
+
+export const acBenefits: Benefit[] = [
+  {
+    title: "Lower Energy Bills",
+    description: "Clean, well-tuned units run more efficiently, cutting your cooling costs through the summer.",
+    icon: "bolt",
+  },
+  {
+    title: "Healthier Air",
+    description: "Removing dust, mould and bacteria improves indoor air quality for tenants and families.",
+    icon: "droplet",
+  },
+  {
+    title: "Fewer Breakdowns",
+    description: "Preventative servicing catches small issues before they become expensive emergency failures.",
+    icon: "shield",
+  },
+  {
+    title: "Documented Every Time",
+    description: "Before-and-after photos and a same-day report on every single visit. Complete transparency.",
+    icon: "clipboard",
+  },
+];
+
+export const ductBenefits: Benefit[] = [
+  {
+    title: "Improved Air Quality",
+    description: "Removes accumulated dust, allergens and debris from your duct and vent system.",
+    icon: "droplet",
+  },
+  {
+    title: "Energy Savings",
+    description: "Clean coils and ducts let your system cool efficiently, reducing energy consumption.",
+    icon: "bolt",
+  },
+  {
+    title: "Better Cooling Output",
+    description: "Unrestricted airflow and clean coils deliver stronger, more consistent cooling.",
+    icon: "ac",
+  },
+  {
+    title: "Extended Equipment Life",
+    description: "Less strain on the system means your AC equipment lasts longer and performs better.",
+    icon: "shield",
+  },
+];
+
+/* ---------- SEO KEYWORDS ---------- */
+export const seoKeywords = [
+  "AC maintenance Dubai",
+  "AC cleaning Dubai",
+  "AC repair Dubai",
+  "duct cleaning Dubai",
+  "coil cleaning Dubai",
+  "property maintenance Dubai",
+  "home maintenance Dubai",
+  "snagging inspection Dubai",
+  "property snagging UAE",
+  "building inspection Dubai",
+  "AC maintenance UAE",
+  "annual maintenance contract Dubai",
+  "Arcta Group",
+];
+
+/* ---------- LEGAL / FOOTER ---------- */
+export const legalLinks = [
+  { label: "Privacy Policy", href: "/#" },
+  { label: "Terms of Service", href: "/#" },
+  { label: "Cookie Policy", href: "/#" },
+] as const;
+
+export const companyLinks = [
+  { label: "About Us", href: "/#about" },
+  { label: "Why Choose Us", href: "/#why" },
+  { label: "Property Managers", href: "/property-managers" },
+  { label: "Service Areas", href: "/#areas" },
+  { label: "Contact", href: "/#contact" },
+] as const;
