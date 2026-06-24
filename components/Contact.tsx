@@ -10,6 +10,8 @@ const serviceOptions = [
   "AC Repair / Callout",
   "Chemical Deep Clean",
   "Duct & Coil Cleaning",
+  "Deep Cleaning & Sanitisation",
+  "Water Filtration",
   "Home Maintenance",
   "Snagging Inspection",
   "Annual Contract",

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { services } from "@/lib/content";
+import { services, servicesSection } from "@/lib/content";
 import SectionHeading from "./SectionHeading";
 import { staggerContainer, staggerItem } from "./Reveal";
 import { Icon, type IconName } from "./Icons";
@@ -12,9 +12,9 @@ export default function Services() {
     <section id="services" className="relative bg-mist-100 py-20 lg:py-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="What We Offer"
-          title={<>Complete property care, one trusted partner</>}
-          description="From routine AC maintenance to emergency repairs, deep cleaning and detailed snagging inspections — every service delivered to one professional standard."
+          eyebrow={servicesSection.eyebrow}
+          title={servicesSection.title}
+          description={servicesSection.description}
         />
 
         <motion.div
@@ -41,7 +41,7 @@ export default function Services() {
                     <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-emerald-500/20 blur-3xl" />
                     <span className="relative inline-flex w-fit items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
                       <Icon name="sparkle" className="h-3.5 w-3.5" />
-                      Most Requested
+                      {service.featuredLabel ?? "Most Requested"}
                     </span>
                   </>
                 )}

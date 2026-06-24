@@ -142,6 +142,27 @@ const paths: Record<string, React.ReactNode> = {
     <path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3" />
   ),
   bolt: <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />,
+  filter: (
+    <>
+      <path d="M4 4h16l-6 7v5l-4 2v-7L4 4Z" />
+    </>
+  ),
+  spray: (
+    <>
+      <path d="M9 3v4M12 2v5M15 3v4" />
+      <path d="M12 8c-2 0-4 1.5-4 4v2h8v-2c0-2.5-2-4-4-4Z" />
+      <path d="M8 18h8M10 21h4" />
+    </>
+  ),
+  leaf: (
+    <>
+      <path d="M12 21c-4-3-7-7-7-12 0 0 4 1 7 4 3-3 7-4 7-4 0 5-3 9-7 12Z" />
+      <path d="M12 21V9" />
+    </>
+  ),
+  heart: (
+    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z" />
+  ),
 };
 
 export type IconName = keyof typeof iconNames;
@@ -150,11 +171,11 @@ const iconNames = {
   pin: 1, clipboard: 1, badge: 1, chat: 1, phone: 1, shield: 1, document: 1,
   calendar: 1, chart: 1, headset: 1, key: 1, tag: 1, building: 1, check: 1,
   arrowRight: 1, arrowUpRight: 1, star: 1, whatsapp: 1, mail: 1, instagram: 1,
-  menu: 1, close: 1, sparkle: 1, bolt: 1,
+  menu: 1, close: 1, sparkle: 1, bolt: 1, filter: 1, spray: 1, leaf: 1, heart: 1,
 } as const;
 
 export function Icon({ name, ...props }: IconProps) {
-  const filled = name === "star" || name === "whatsapp";
+  const filled = name === "star" || name === "whatsapp" || name === "heart";
   return (
     <svg
       viewBox="0 0 24 24"

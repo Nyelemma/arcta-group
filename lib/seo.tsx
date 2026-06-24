@@ -43,7 +43,7 @@ export const localBusinessSchema = {
   "@id": `${SITE_URL}/#organization`,
   name: business.name,
   description:
-    "Premium AC maintenance, duct cleaning, snagging inspections and property maintenance services across the UAE.",
+    "Premium AC maintenance, duct cleaning, home sanitisation, water filtration, snagging inspections and property maintenance services across the UAE — creating cleaner air and healthier homes.",
   url: SITE_URL,
   image: `${SITE_URL}/opengraph-image`,
   logo: `${SITE_URL}/icon.svg`,

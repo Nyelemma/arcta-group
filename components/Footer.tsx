@@ -20,8 +20,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist-400">
-              Premium AC maintenance, duct cleaning, snagging inspections and property
-              maintenance, trusted by property managers, landlords and homeowners across the UAE.
+              Premium AC maintenance, duct cleaning, home sanitisation, water filtration and property
+              services — helping create cleaner air and healthier homes across the UAE.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a

@@ -49,6 +49,8 @@ export const nav = [
 export const serviceNav = [
   { label: "AC Maintenance & Cleaning", href: "/ac-maintenance" },
   { label: "Duct & Coil Cleaning", href: "/duct-coil-cleaning" },
+  { label: "Deep Cleaning & Sanitisation", href: "/home-sanitisation" },
+  { label: "Water Filtration", href: "/water-filtration" },
   { label: "Property Maintenance", href: "/property-maintenance" },
   { label: "Snagging Inspections", href: "/snagging-inspections" },
   { label: "Annual Contracts", href: "/annual-maintenance-contracts" },
@@ -63,7 +65,7 @@ export const hero = {
   headline: "Professional Property Services Across The UAE",
   highlight: ["Property", "Services"],
   subheadline:
-    "Premium AC maintenance, duct cleaning, snagging inspections and home maintenance services trusted by property managers, landlords and homeowners.",
+    "Premium AC maintenance, duct cleaning, home sanitisation, water filtration and property services — helping families and property managers across the UAE create cleaner air, healthier homes and better living environments.",
   primaryCta: { label: "Request Service", href: "/#contact" },
   secondaryCta: { label: "View Services", href: "/#services" },
   trustIndicators: [
@@ -90,6 +92,7 @@ export const about = {
   title: "Premium service, delivered with precision",
   paragraphs: [
     "Arcta Group was founded with a single, clear purpose — to bring a genuinely professional standard to property maintenance across the UAE. We exist because property managers, landlords and homeowners deserve a contractor they can actually rely on.",
+    "Beyond AC and maintenance, we help create healthier homes — through cleaner air, professional sanitisation and filtered water that supports everyday family wellbeing.",
     "Every technician arrives in full uniform, communicates in English, documents every job with before and after photography, and leaves the property exactly as they found it. You deal directly with our founder — never a call centre, never an automated system.",
     "One call. One standard. Every time.",
   ],
@@ -128,6 +131,54 @@ export const about = {
   ],
 } as const;
 
+/* ---------- HOME WELLNESS (health-focused messaging) ---------- */
+export const homeWellness = {
+  eyebrow: "Healthier Homes",
+  title: "Cleaner air. Cleaner water. Healthier living.",
+  description:
+    "Your home environment affects how you feel every day. Alongside our core AC and maintenance services, we help families and property owners improve indoor air quality, hygiene and water quality — creating spaces that are genuinely healthier to live in.",
+  pillars: [
+    {
+      title: "Cleaner Air",
+      description:
+        "AC servicing, duct cleaning and chemical deep cleans remove dust, mould and bacteria — improving the air your family breathes.",
+      icon: "ac",
+    },
+    {
+      title: "Healthier Living Environments",
+      description:
+        "Regular maintenance and deep cleaning reduce contaminants, odours and allergens for a fresher, more comfortable home.",
+      icon: "leaf",
+    },
+    {
+      title: "Home Sanitisation",
+      description:
+        "Professional deep cleaning, ozone treatment, electrostatic spraying and steam cleaning for a thoroughly hygienic living space.",
+      icon: "spray",
+    },
+    {
+      title: "Cleaner Water",
+      description:
+        "Whole-home water filtration systems that improve water quality for drinking, cooking, bathing and everyday use.",
+      icon: "filter",
+    },
+    {
+      title: "Family Wellbeing",
+      description:
+        "From filtered water to sanitised surfaces and cleaner air — every service is designed to support the health of those who live in your home.",
+      icon: "heart",
+    },
+  ],
+} as const;
+
+/* ---------- SERVICES SECTION HEADING ---------- */
+export const servicesSection = {
+  eyebrow: "What We Offer",
+  title: "Complete property care, one trusted partner",
+  description:
+    "From routine AC maintenance and air quality improvements to deep sanitisation, water filtration and snagging inspections — every service delivered to one professional standard.",
+} as const;
+
 /* ---------- SERVICES ---------- */
 export type Service = {
   slug: string;
@@ -138,6 +189,7 @@ export type Service = {
   features: string[];
   href: string;
   featured?: boolean;
+  featuredLabel?: string;
 };
 
 export const services: Service[] = [
@@ -146,14 +198,14 @@ export const services: Service[] = [
     title: "AC Maintenance & Cleaning",
     short: "Routine servicing that keeps cooling efficient and reliable.",
     description:
-      "Comprehensive AC servicing recommended twice yearly for every unit — keeping your cooling efficient, healthy and reliable through the UAE summer.",
+      "Comprehensive AC servicing recommended twice yearly — keeping your cooling efficient and reliable while improving indoor air quality through cleaner filters, coils and drainage.",
     icon: "ac",
     features: [
       "Filter cleaning",
       "Coil cleaning",
       "Drain flushing",
       "Fan inspections",
-      "System performance checks",
+      "Indoor air quality checks",
     ],
     href: "/ac-maintenance",
   },
@@ -193,7 +245,7 @@ export const services: Service[] = [
     title: "Duct & Ventilation Cleaning",
     short: "Cleaner air and better efficiency for dusty UAE environments.",
     description:
-      "Full duct and vent system cleaning for improved indoor air quality and system efficiency — essential in the UAE's dusty climate.",
+      "Full duct and vent system cleaning that removes accumulated dust and allergens — improving indoor air quality and system efficiency in the UAE's dusty climate.",
     icon: "duct",
     features: [
       "Air duct cleaning",
@@ -217,6 +269,40 @@ export const services: Service[] = [
       "Extended equipment life",
     ],
     href: "/duct-coil-cleaning",
+  },
+  {
+    slug: "home-sanitisation",
+    title: "Deep Cleaning & Sanitisation",
+    short: "Professional deep cleans and advanced sanitisation for healthier homes.",
+    description:
+      "Thorough deep cleaning and advanced sanitisation treatments that reduce bacteria, remove odours and create cleaner, more hygienic living spaces for your family.",
+    icon: "spray",
+    features: [
+      "Deep home cleaning",
+      "Ozone treatment",
+      "Electrostatic spraying",
+      "Steam cleaning",
+      "Odour & bacteria removal",
+    ],
+    href: "/home-sanitisation",
+  },
+  {
+    slug: "water-filtration",
+    title: "Water Filtration",
+    short: "Supply, installation and maintenance of whole-home filtration systems.",
+    description:
+      "Professional water filtration systems that improve water quality throughout your villa — for cleaner drinking water, better cooking and healthier everyday use.",
+    icon: "filter",
+    features: [
+      "System supply & installation",
+      "Whole-villa filtration",
+      "Scheduled filter replacement",
+      "Annual maintenance plans",
+      "Improved water quality",
+    ],
+    href: "/water-filtration",
+    featured: true,
+    featuredLabel: "Whole-Home Solution",
   },
   {
     slug: "home-maintenance",
@@ -248,7 +334,207 @@ export const services: Service[] = [
       "Defect identification",
     ],
     href: "/snagging-inspections",
-    featured: true,
+  },
+];
+
+/* ---------- DEEP CLEANING & SANITISATION (sub-page) ---------- */
+export const sanitisation = {
+  eyebrow: "Deep Cleaning & Sanitisation",
+  title: "A cleaner, healthier home environment",
+  intro:
+    "Surface cleaning alone is not always enough. Our deep cleaning and advanced sanitisation services target bacteria, odours and contaminants — leaving your home genuinely cleaner and more hygienic for everyday family life.",
+  methods: [
+    {
+      title: "Deep Home Cleaning",
+      description:
+        "A thorough, room-by-room deep clean that reaches areas routine cleaning misses — kitchens, bathrooms, fixtures and high-touch surfaces.",
+      icon: "sparkle",
+    },
+    {
+      title: "Ozone Treatment",
+      description:
+        "Ozone gas penetrates hard-to-reach areas to neutralise odours, bacteria and airborne contaminants — ideal after renovations or long vacancies.",
+      icon: "bolt",
+    },
+    {
+      title: "Electrostatic Spraying",
+      description:
+        "Fine-mist electrostatic application wraps disinfectant around surfaces for even, comprehensive coverage — including awkward and vertical areas.",
+      icon: "spray",
+    },
+    {
+      title: "Steam Cleaning",
+      description:
+        "High-temperature steam sanitises surfaces without harsh chemicals — effective on upholstery, tiles, grout and kitchen areas.",
+      icon: "droplet",
+    },
+  ],
+  benefits: [
+    "Improved hygiene across the home",
+    "Reduction of bacteria and contaminants",
+    "Effective odour removal",
+    "Cleaner, fresher living spaces",
+    "Healthier indoor environments for families",
+  ],
+} as const;
+
+export const sanitisationBenefits: Benefit[] = [
+  {
+    title: "Improved Hygiene",
+    description: "Targeted treatments reduce bacteria and contaminants on surfaces throughout your home.",
+    icon: "shield",
+  },
+  {
+    title: "Odour Removal",
+    description: "Ozone and deep cleaning neutralise persistent odours from cooking, moisture and long-term use.",
+    icon: "sparkle",
+  },
+  {
+    title: "Healthier Spaces",
+    description: "Sanitised environments support family wellbeing — especially in kitchens, bathrooms and bedrooms.",
+    icon: "heart",
+  },
+  {
+    title: "Fully Documented",
+    description: "Before-and-after photos and a same-day report on every visit, as with all Arcta Group services.",
+    icon: "clipboard",
+  },
+];
+
+export const sanitisationFaqs: Faq[] = [
+  {
+    question: "What is the difference between deep cleaning and regular cleaning?",
+    answer:
+      "Deep cleaning is a comprehensive, detailed clean that addresses built-up grime, hidden areas and high-touch surfaces that routine cleaning does not reach. It is ideal before move-in, after renovations or as a periodic refresh.",
+  },
+  {
+    question: "What is ozone treatment used for?",
+    answer:
+      "Ozone treatment is an advanced sanitisation method that neutralises odours, bacteria and airborne contaminants. It is particularly effective after building work, in properties that have been vacant, or where persistent smells remain.",
+  },
+  {
+    question: "Is electrostatic spraying safe for homes?",
+    answer:
+      "Yes. Our electrostatic spraying applies disinfectant as a fine, evenly distributed mist that wraps around surfaces. It is a professional-grade method used to achieve thorough coverage in residential properties.",
+  },
+  {
+    question: "How often should a home be deep cleaned or sanitised?",
+    answer:
+      "We recommend a deep clean at least once or twice a year, or after renovations, tenancies or illness. Properties with children, pets or high footfall may benefit from more frequent sanitisation.",
+  },
+];
+
+/* ---------- WATER FILTRATION (sub-page) ---------- */
+export type FiltrationStage = {
+  stage: string;
+  title: string;
+  description: string;
+};
+
+export const waterFiltration = {
+  eyebrow: "Water Filtration",
+  title: "Cleaner water for your entire home",
+  intro:
+    "Municipal water in the UAE can carry sediment, chlorine and impurities that affect taste, skin, hair and your plumbing. A professionally installed whole-villa filtration system delivers cleaner, safer water to every tap, shower and appliance in your home.",
+  symptoms: [
+    "Dry or irritated skin after showering",
+    "Hair thinning or excessive dryness",
+    "Unpleasant taste or odour from taps",
+    "Scale buildup on fixtures and appliances",
+    "Sediment visible in water",
+  ],
+  stages: [
+    {
+      stage: "Stage 1",
+      title: "Sediment Filtration",
+      description:
+        "A high-capacity sediment filter captures sand, rust, dirt and larger particles from the water supply — protecting your plumbing, appliances and downstream filter stages from damage.",
+    },
+    {
+      stage: "Stage 2",
+      title: "Carbon Block Filtration",
+      description:
+        "A dense carbon block filter removes chlorine, chloramines and organic compounds. This improves taste and odour, protects skin and hair from chlorine exposure, and extends the life of your fixtures.",
+    },
+    {
+      stage: "Stage 3",
+      title: "Final Polishing Filter",
+      description:
+        "A final fine sediment filter captures any remaining particles, ensuring consistently clean, clear water reaches every point of use throughout your villa.",
+    },
+  ] as FiltrationStage[],
+  services: [
+    {
+      title: "Supply",
+      description:
+        "We supply professionally specified filtration systems designed for UAE water conditions — sized correctly for your property.",
+      icon: "filter",
+    },
+    {
+      title: "Installation",
+      description:
+        "Experienced technicians install your system at the point of entry, ensuring every tap and shower receives filtered water from day one.",
+      icon: "wrench",
+    },
+    {
+      title: "Maintenance",
+      description:
+        "Scheduled filter replacements, system inspections and performance checks keep your filtration running at its best year after year.",
+      icon: "calendar",
+    },
+  ],
+  familyBenefits: [
+    "Cleaner water for drinking and cooking",
+    "Gentler on skin and hair during bathing",
+    "Protection for appliances and plumbing",
+    "Improved taste and odour from every tap",
+    "Peace of mind for families with children",
+  ],
+} as const;
+
+export const waterFiltrationBenefits: Benefit[] = [
+  {
+    title: "Better Drinking Water",
+    description: "Filtered water tastes cleaner and is free from the chlorine and sediment common in UAE supplies.",
+    icon: "droplet",
+  },
+  {
+    title: "Healthier for Families",
+    description: "Cleaner water for drinking, cooking and bathing supports everyday family wellbeing.",
+    icon: "heart",
+  },
+  {
+    title: "Protects Your Home",
+    description: "Reduced sediment and scale extends the life of taps, showers, appliances and plumbing.",
+    icon: "shield",
+  },
+  {
+    title: "Professional Aftercare",
+    description: "Annual maintenance plans with scheduled filter changes keep your system performing year-round.",
+    icon: "clipboard",
+  },
+];
+
+export const waterFiltrationFaqs: Faq[] = [
+  {
+    question: "Why do I need a water filtration system in Dubai?",
+    answer:
+      "Municipal water supplies in the UAE often contain sediment, chlorine and other impurities that can affect skin, hair, taste and plumbing. A whole-villa system filters water at the point of entry, so every tap and shower in your home receives cleaner water.",
+  },
+  {
+    question: "Do you supply and install filtration systems?",
+    answer:
+      "Yes. We supply professionally specified systems, install them at the point of entry and provide ongoing maintenance — including scheduled filter replacements and system inspections.",
+  },
+  {
+    question: "How often do filters need replacing?",
+    answer:
+      "Filter replacement schedules depend on your system and water usage, but typically filters are replaced annually. We offer maintenance plans to handle this on schedule so your system always performs at its best.",
+  },
+  {
+    question: "Will filtered water improve skin and hair?",
+    answer:
+      "Many homeowners notice an improvement after installing filtration. Removing chlorine and sediment from bathing water can reduce dryness and irritation — a common concern with unfiltered UAE water.",
   },
 ];
 
@@ -289,7 +575,7 @@ export const reasons: Reason[] = [
   {
     title: "Quality Assurance",
     description:
-      "Consistent standards on every visit, backed by documentation and a founder who is personally accountable for every job.",
+      "Consistent standards on every visit — from AC servicing to sanitisation and water filtration — backed by documentation and personal accountability.",
     icon: "shield",
   },
 ];
@@ -299,7 +585,7 @@ export const propertyManagers = {
   eyebrow: "For Property Professionals",
   title: "A maintenance partner built for portfolios",
   intro:
-    "Whether you manage 5 properties or 500, Arcta Group is the dependable, fully documented partner that makes you look good to your landlords and owners.",
+    "Whether you manage 5 properties or 500, Arcta Group is the dependable, fully documented partner that makes you look good to your landlords and owners — from AC and maintenance to air quality, sanitisation and water filtration.",
   audiences: [
     "Property management companies",
     "Villa communities",
@@ -540,9 +826,9 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The difference in air quality after the chemical clean and duct service was immediate. Communication in English throughout made the whole process easy.",
-    name: "Landlord",
-    role: "Apartment portfolio, Abu Dhabi",
+      "After installing the whole-villa filtration system, the difference in water quality was noticeable straight away. Combined with their duct cleaning, the whole home feels fresher and healthier.",
+    name: "Homeowner",
+    role: "Villa, Arabian Ranches",
     rating: 5,
   },
 ];
@@ -554,7 +840,7 @@ export const serviceAreas: ServiceArea[] = [
   {
     name: "Dubai",
     description:
-      "AC maintenance, duct cleaning, snagging and property maintenance across Dubai's villa communities and residential towers.",
+      "AC maintenance, duct cleaning, home sanitisation, water filtration and property services across Dubai's villa communities and residential towers.",
   },
   {
     name: "Abu Dhabi",
@@ -616,6 +902,16 @@ export const faqs: Faq[] = [
     question: "How quickly can you respond to an emergency?",
     answer:
       "We offer 24-hour response times and prioritised callouts for contract clients, with same-day attendance for urgent issues wherever possible.",
+  },
+  {
+    question: "Do you offer deep cleaning and home sanitisation?",
+    answer:
+      "Yes. We provide professional deep home cleaning, ozone treatment, electrostatic spraying and steam cleaning — designed to improve hygiene, remove odours and create healthier indoor environments.",
+  },
+  {
+    question: "Do you supply and install water filtration systems?",
+    answer:
+      "Yes. We supply, install and maintain whole-villa water filtration systems tailored to UAE water conditions — with scheduled filter replacements and annual maintenance plans available.",
   },
 ];
 
@@ -765,6 +1061,12 @@ export const seoKeywords = [
   "building inspection Dubai",
   "AC maintenance UAE",
   "annual maintenance contract Dubai",
+  "home sanitisation Dubai",
+  "deep cleaning Dubai",
+  "ozone treatment Dubai",
+  "water filtration Dubai",
+  "villa water filter UAE",
+  "indoor air quality Dubai",
   "Arcta Group",
 ];
 
@@ -777,6 +1079,7 @@ export const legalLinks = [
 
 export const companyLinks = [
   { label: "About Us", href: "/#about" },
+  { label: "Healthier Homes", href: "/#wellness" },
   { label: "Why Choose Us", href: "/#why" },
   { label: "Property Managers", href: "/property-managers" },
   { label: "Service Areas", href: "/#areas" },

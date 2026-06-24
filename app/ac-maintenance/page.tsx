@@ -14,7 +14,7 @@ import { buildMetadata, JsonLd, serviceSchema, faqSchema, breadcrumbSchema } fro
 export const metadata: Metadata = buildMetadata({
   title: "AC Maintenance Dubai | AC Cleaning & Repair Services | Arcta Group",
   description:
-    "Professional AC maintenance, cleaning and repair in Dubai and across the UAE. Filter & coil cleaning, drain flushing, chemical deep cleans and emergency repairs — fully documented. Request a free quote from Arcta Group.",
+    "Professional AC maintenance, cleaning and repair in Dubai and across the UAE. Improve indoor air quality with filter & coil cleaning, drain flushing, chemical deep cleans and emergency repairs — fully documented.",
   path: "/ac-maintenance",
   keywords: [
     "AC maintenance Dubai",
@@ -35,6 +35,7 @@ const groups: IncludeGroup[] = [
       "Coil cleaning",
       "Drain flushing",
       "Fan inspections",
+      "Indoor air quality checks",
       "System performance checks",
     ],
   },
@@ -55,8 +56,8 @@ const groups: IncludeGroup[] = [
     items: [
       "Intensive chemical wash",
       "Mould & bacteria removal",
+      "Healthier indoor air quality",
       "Restored cooling performance",
-      "Improved indoor air quality",
       "Ideal for long service gaps",
     ],
   },

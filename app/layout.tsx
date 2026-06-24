@@ -20,7 +20,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 const TITLE = "Arcta Group | Premium AC Maintenance & Property Services Across The UAE";
 const DESCRIPTION =
-  "Arcta Group delivers premium AC maintenance, duct cleaning, coil cleaning, snagging inspections and property maintenance across Dubai and the UAE. Trusted by property managers, landlords and homeowners. Request a service today.";
+  "Arcta Group delivers premium AC maintenance, duct cleaning, home sanitisation, water filtration, snagging inspections and property maintenance across Dubai and the UAE. Cleaner air, healthier homes and better living environments. Request a service today.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

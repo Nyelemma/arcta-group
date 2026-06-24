@@ -1,3 +1,4 @@
+import HomeWellness from "@/components/HomeWellness";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
@@ -27,6 +28,7 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <About />
+        <HomeWellness />
         <Services />
         <Snagging />
         <WhyChooseUs />
