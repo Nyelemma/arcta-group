@@ -7,7 +7,7 @@ import BenefitGrid from "@/components/BenefitGrid";
 import ServiceIncludes, { type IncludeGroup } from "@/components/ServiceIncludes";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
-import CTABand from "@/components/CTABand";
+import ServiceEnquiry from "@/components/ServiceEnquiry";
 import { acBenefits, acFaqs } from "@/lib/content";
 import { buildMetadata, JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/seo";
 
@@ -101,9 +101,11 @@ export default function ACMaintenancePage() {
 
         <Process />
         <FAQ items={acFaqs} />
-        <CTABand
-          title="Book your AC service today"
+        <ServiceEnquiry
+          title="Book Your AC Service"
           description="Free, itemised quotes returned within the hour. Keep your units running at their best all year round."
+          ctaLabel="Request AC Service"
+          whatsappText="Hi Arcta Group, I'd like to book an AC maintenance service for my property."
         />
       </main>
       <Footer />

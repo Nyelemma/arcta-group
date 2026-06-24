@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { business, nav, serviceNav } from "@/lib/content";
+import { business, nav } from "@/lib/content";
 import { Icon } from "./Icons";
 
 export default function Navbar() {
@@ -123,24 +123,6 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 ))}
-              </div>
-
-              <div className="mt-6">
-                <p className="px-4 text-xs font-semibold uppercase tracking-widest2 text-mist-500">
-                  Services
-                </p>
-                <div className="mt-2 flex flex-col gap-1">
-                  {serviceNav.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className="rounded-xl px-4 py-2.5 text-sm text-mist-700 hover:bg-mist-100 hover:text-navy-900"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
               </div>
 
               <div className="mt-auto flex flex-col gap-3 pt-8">

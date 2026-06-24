@@ -4,9 +4,10 @@ import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import PageHero from "@/components/PageHero";
 import BenefitGrid from "@/components/BenefitGrid";
+import ServiceIncludes, { type IncludeGroup } from "@/components/ServiceIncludes";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
-import CTABand from "@/components/CTABand";
+import ServiceEnquiry from "@/components/ServiceEnquiry";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { Icon, type IconName } from "@/components/Icons";
@@ -16,25 +17,67 @@ import { buildMetadata, JsonLd, serviceSchema, faqSchema, breadcrumbSchema } fro
 export const metadata: Metadata = buildMetadata({
   title: "Deep Cleaning & Home Sanitisation Dubai | Arcta Group",
   description:
-    "Professional deep home cleaning, ozone treatment, electrostatic spraying and steam cleaning in Dubai and across the UAE. Improve hygiene, remove odours and create healthier indoor environments.",
-  path: "/home-sanitisation",
+    "Professional deep home cleaning, ozone treatment, electrostatic spraying and steam cleaning in Dubai and across the UAE. Improve hygiene and create healthier indoor environments.",
+  path: "/deep-cleaning",
   keywords: [
     "deep cleaning Dubai",
     "home sanitisation Dubai",
     "ozone treatment Dubai",
     "electrostatic spraying UAE",
     "steam cleaning Dubai",
-    "home hygiene services Dubai",
   ],
 });
 
-export default function HomeSanitisationPage() {
+const groups: IncludeGroup[] = [
+  {
+    title: "Deep Home Cleaning",
+    icon: "sparkle",
+    items: [
+      "Room-by-room deep clean",
+      "Kitchens & bathrooms",
+      "High-touch surfaces",
+      "Fixtures & fittings",
+    ],
+  },
+  {
+    title: "Ozone Treatment",
+    icon: "bolt",
+    items: [
+      "Odour neutralisation",
+      "Bacteria reduction",
+      "Airborne contaminant removal",
+      "Post-renovation treatment",
+    ],
+  },
+  {
+    title: "Electrostatic Spraying",
+    icon: "spray",
+    items: [
+      "Even surface coverage",
+      "Disinfectant application",
+      "Hard-to-reach areas",
+      "Residential-safe methods",
+    ],
+  },
+  {
+    title: "Steam Cleaning",
+    icon: "droplet",
+    items: [
+      "Chemical-free sanitisation",
+      "Upholstery & tiles",
+      "Grout & kitchen areas",
+      "High-temperature cleaning",
+    ],
+  },
+];
+
+export default function DeepCleaningPage() {
   return (
     <>
       <Navbar />
       <main id="main">
         <PageHero
-          eyebrow={sanitisation.eyebrow}
+          eyebrow="Deep Cleaning"
           title={
             <>
               A cleaner, <span className="text-brand">healthier home</span>
@@ -42,7 +85,7 @@ export default function HomeSanitisationPage() {
           }
           description={sanitisation.intro}
           icon="spray"
-          crumbs={[{ label: "Deep Cleaning & Sanitisation", href: "/home-sanitisation" }]}
+          crumbs={[{ label: "Deep Cleaning", href: "/deep-cleaning" }]}
           secondaryCta={{ label: "Our Methods", href: "#methods" }}
           highlights={[
             "Deep home cleaning",
@@ -63,7 +106,7 @@ export default function HomeSanitisationPage() {
             <SectionHeading
               eyebrow="Our Methods"
               title="Advanced sanitisation services"
-              description="We use professional-grade methods selected for your property's needs — each designed to improve hygiene and create a healthier living environment."
+              description="Professional-grade methods selected for your property's needs — each designed to improve hygiene and create a healthier living environment."
             />
             <div className="mt-14 grid gap-6 sm:grid-cols-2">
               {sanitisation.methods.map((method, i) => (
@@ -101,11 +144,20 @@ export default function HomeSanitisationPage() {
           </div>
         </section>
 
+        <ServiceIncludes
+          eyebrow="What's Included"
+          title="Comprehensive deep cleaning & sanitisation"
+          description="From thorough deep cleans to advanced ozone, electrostatic and steam treatments — tailored to your property."
+          groups={groups}
+        />
+
         <Process />
         <FAQ items={sanitisationFaqs} />
-        <CTABand
-          title="Book a deep clean or sanitisation visit"
+        <ServiceEnquiry
+          title="Book a Deep Cleaning Service"
           description="Tell us about your property and we'll recommend the right treatment. Free quotes returned within the hour."
+          ctaLabel="Book Deep Cleaning"
+          whatsappText="Hi Arcta Group, I'd like to book a deep cleaning / sanitisation service for my property."
         />
       </main>
       <Footer />
@@ -115,13 +167,13 @@ export default function HomeSanitisationPage() {
           serviceSchema({
             name: "Deep Cleaning & Home Sanitisation",
             description: sanitisation.intro,
-            path: "/home-sanitisation",
+            path: "/deep-cleaning",
             serviceType: "Home Sanitisation",
           }),
           faqSchema(sanitisationFaqs),
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Deep Cleaning & Sanitisation", path: "/home-sanitisation" },
+            { name: "Deep Cleaning", path: "/deep-cleaning" },
           ]),
         ]}
       />

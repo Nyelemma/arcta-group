@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import BenefitGrid from "@/components/BenefitGrid";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
-import CTABand from "@/components/CTABand";
+import ServiceEnquiry from "@/components/ServiceEnquiry";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { Icon, type IconName } from "@/components/Icons";
@@ -161,9 +161,11 @@ export default function WaterFiltrationPage() {
 
         <Process />
         <FAQ items={waterFiltrationFaqs} />
-        <CTABand
-          title="Improve your home's water quality"
+        <ServiceEnquiry
+          title="Request a Water Filtration Consultation"
           description="Request a consultation or quote for a whole-villa filtration system. We respond within the hour."
+          ctaLabel="Request Consultation"
+          whatsappText="Hi Arcta Group, I'd like to request a water filtration consultation for my property."
         />
       </main>
       <Footer />

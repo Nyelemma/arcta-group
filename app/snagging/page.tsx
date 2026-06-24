@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
@@ -7,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import SnaggingCTA from "@/components/SnaggingCTA";
 import Process from "@/components/Process";
 import FAQ from "@/components/FAQ";
-import CTABand from "@/components/CTABand";
+import ServiceEnquiry from "@/components/ServiceEnquiry";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import { InspectionChecklist } from "@/components/Snagging";
@@ -18,19 +17,18 @@ import { buildMetadata, JsonLd, serviceSchema, faqSchema, breadcrumbSchema } fro
 export const metadata: Metadata = buildMetadata({
   title: "Snagging Inspection Dubai | Property Snagging UAE | Arcta Group",
   description:
-    "Independent snagging inspections across Dubai and the UAE. New build, pre-handover and resale property inspections with detailed photographic reporting. Protect your property investment with Arcta Group.",
-  path: "/snagging-inspections",
+    "Independent snagging inspections across Dubai and the UAE. New build, pre-handover and resale property inspections with detailed photographic reporting. Protect your property investment.",
+  path: "/snagging",
   keywords: [
     "snagging inspection Dubai",
     "property snagging UAE",
     "building inspection Dubai",
     "pre-handover inspection Dubai",
     "new build snagging Dubai",
-    "snagging company Dubai",
   ],
 });
 
-export default function SnaggingInspectionsPage() {
+export default function SnaggingPage() {
   return (
     <>
       <Navbar />
@@ -44,7 +42,7 @@ export default function SnaggingInspectionsPage() {
           }
           description="Independent snagging inspections for new builds, pre-handover and resale properties across Dubai and the UAE — with detailed photographic reporting you can act on."
           icon="search"
-          crumbs={[{ label: "Snagging Inspections", href: "/snagging-inspections" }]}
+          crumbs={[{ label: "Snagging", href: "/snagging" }]}
           primaryCta={{ label: "Book an Inspection", href: "/#contact" }}
           secondaryCta={{ label: "View Process", href: "#process" }}
           highlights={[
@@ -54,7 +52,6 @@ export default function SnaggingInspectionsPage() {
           ]}
         />
 
-        {/* Inspection types + checklist */}
         <section className="bg-white py-20 lg:py-28">
           <div className="container-x">
             <SectionHeading
@@ -107,7 +104,6 @@ export default function SnaggingInspectionsPage() {
 
         <SnaggingCTA />
 
-        {/* Why it matters */}
         <section className="bg-white py-20 lg:py-28">
           <div className="container-x">
             <SectionHeading
@@ -149,11 +145,15 @@ export default function SnaggingInspectionsPage() {
           </div>
         </section>
 
-        <Process />
+        <div id="process">
+          <Process />
+        </div>
         <FAQ items={snaggingFaqs} />
-        <CTABand
-          title="Book your snagging inspection"
+        <ServiceEnquiry
+          title="Arrange a Snagging Inspection"
           description="Protect your investment before handover. Get a fast, free quote and a same-day photographic report."
+          ctaLabel="Book Inspection"
+          whatsappText="Hi Arcta Group, I'd like to arrange a snagging inspection for my property."
         />
       </main>
       <Footer />
@@ -163,14 +163,14 @@ export default function SnaggingInspectionsPage() {
           serviceSchema({
             name: "Snagging Inspection",
             description:
-              "Independent new build, pre-handover and resale property snagging inspections across Dubai and the UAE with detailed photographic reporting.",
-            path: "/snagging-inspections",
+              "Independent new build, pre-handover and resale property snagging inspections across Dubai and the UAE.",
+            path: "/snagging",
             serviceType: "Property Snagging Inspection",
           }),
           faqSchema(snaggingFaqs),
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Snagging Inspections", path: "/snagging-inspections" },
+            { name: "Snagging", path: "/snagging" },
           ]),
         ]}
       />

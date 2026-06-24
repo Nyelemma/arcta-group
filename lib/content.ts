@@ -38,22 +38,23 @@ export const business = {
 
 /* ---------- NAVIGATION ---------- */
 export const nav = [
-  { label: "About", href: "/#about" },
-  { label: "Services", href: "/#services" },
-  { label: "Snagging", href: "/snagging-inspections" },
-  { label: "Property Managers", href: "/property-managers" },
-  { label: "Contracts", href: "/#pricing" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Deep Cleaning", href: "/deep-cleaning" },
+  { label: "Water Filtration", href: "/water-filtration" },
+  { label: "Snagging", href: "/snagging" },
+  { label: "Contracts", href: "/contracts" },
 ] as const;
 
 export const serviceNav = [
   { label: "AC Maintenance & Cleaning", href: "/ac-maintenance" },
   { label: "Duct & Coil Cleaning", href: "/duct-coil-cleaning" },
-  { label: "Deep Cleaning & Sanitisation", href: "/home-sanitisation" },
+  { label: "Deep Cleaning", href: "/deep-cleaning" },
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Property Maintenance", href: "/property-maintenance" },
-  { label: "Snagging Inspections", href: "/snagging-inspections" },
-  { label: "Annual Contracts", href: "/annual-maintenance-contracts" },
+  { label: "Snagging Inspections", href: "/snagging" },
+  { label: "Maintenance Contracts", href: "/contracts" },
+  { label: "Property Managers", href: "/property-managers" },
 ] as const;
 
 /* ---------- HERO ---------- */
@@ -171,6 +172,195 @@ export const homeWellness = {
   ],
 } as const;
 
+/* ---------- HOMEPAGE (concise) ---------- */
+export const homeIntro = {
+  eyebrow: "About Arcta Group",
+  title: "Premium property services, delivered with precision",
+  description:
+    "Arcta Group is the UAE's trusted partner for AC maintenance, deep cleaning, water filtration and property care. We help families and property managers create cleaner air, healthier homes and better living environments — with uniformed technicians, full documentation and direct communication on every job.",
+  cta: { label: "Learn more about us", href: "/about" },
+} as const;
+
+export type HomepageService = {
+  title: string;
+  short: string;
+  icon: string;
+  href: string;
+};
+
+export const homepageServices: HomepageService[] = [
+  {
+    title: "AC Maintenance & Cleaning",
+    short:
+      "Routine servicing, repairs and deep cleans that keep your cooling efficient and your indoor air healthier.",
+    icon: "ac",
+    href: "/ac-maintenance",
+  },
+  {
+    title: "Deep Cleaning & Sanitisation",
+    short:
+      "Professional deep cleans, ozone treatment, electrostatic spraying and steam cleaning for a hygienic home.",
+    icon: "spray",
+    href: "/deep-cleaning",
+  },
+  {
+    title: "Water Filtration",
+    short:
+      "Whole-villa filtration supply, installation and maintenance for cleaner drinking, cooking and bathing water.",
+    icon: "filter",
+    href: "/water-filtration",
+  },
+  {
+    title: "Snagging Inspections",
+    short:
+      "Independent property inspections with detailed photographic reports before handover or purchase.",
+    icon: "search",
+    href: "/snagging",
+  },
+  {
+    title: "Maintenance Contracts",
+    short:
+      "Predictable annual contracts for homeowners, landlords and property portfolios across the UAE.",
+    icon: "document",
+    href: "/contracts",
+  },
+];
+
+export const homeServicesSection = {
+  eyebrow: "Our Services",
+  title: "Everything your property needs",
+  description:
+    "Explore our services in detail — each delivered to the same professional standard, fully documented and backed by direct support from our team.",
+} as const;
+
+/* ---------- ABOUT PAGE (expanded) ---------- */
+export const aboutPage = {
+  hero: {
+    eyebrow: "About Arcta Group",
+    title: "Where reliability meets professional service",
+    description:
+      "Founded to bring a genuinely professional standard to property maintenance across the UAE, Arcta Group has become the trusted partner for property managers, landlords and homeowners who expect more from their contractor.",
+  },
+  mission:
+    "Our mission is simple — to deliver property services that property managers and homeowners can actually rely on. One call, one standard, every time.",
+  values: [
+    {
+      title: "Professional Standards",
+      description:
+        "Uniformed technicians, correct presentation and respectful workmanship on every property we enter.",
+      icon: "badge",
+    },
+    {
+      title: "Transparency",
+      description:
+        "Before-and-after photography and same-day reports on every visit — complete accountability you can pass to landlords.",
+      icon: "clipboard",
+    },
+    {
+      title: "Direct Communication",
+      description:
+        "You deal with our team directly. Clear English, fast responses and no call centres or automated systems.",
+      icon: "phone",
+    },
+    {
+      title: "Healthier Homes",
+      description:
+        "From cleaner air and filtered water to sanitised living spaces — we help create environments that support family wellbeing.",
+      icon: "heart",
+    },
+  ],
+  experience:
+    "We work with villa communities, property management companies, holiday-home operators and homeowners across Dubai and the wider UAE — delivering the same consistent standard whether you manage one property or five hundred.",
+} as const;
+
+/* ---------- CONTRACTS PAGE ---------- */
+export const contractsPage = {
+  hero: {
+    eyebrow: "Maintenance Contracts",
+    title: "Predictable costs, reliable service",
+    description:
+      "Annual maintenance contracts tailored to your property or portfolio — fixed transparent pricing, priority response and full documentation on every visit.",
+  },
+  types: [
+    {
+      title: "Residential Contracts",
+      description:
+        "Annual AC and property maintenance for homeowners and landlords. Two scheduled services per year, priority booking and same-day reports after every visit.",
+      icon: "key",
+    },
+    {
+      title: "Commercial Contracts",
+      description:
+        "Bespoke maintenance plans for property managers, villa communities and commercial portfolios — with dedicated support and monthly reporting.",
+      icon: "building",
+    },
+    {
+      title: "Preventative Maintenance",
+      description:
+        "Scheduled servicing that catches issues early, reduces emergency callouts and keeps your properties running efficiently all year round.",
+      icon: "shield",
+    },
+  ],
+  included: [
+    "Scheduled AC servicing (typically twice yearly)",
+    "Filter and coil cleaning each visit",
+    "Drainage checks and performance reports",
+    "Priority callouts for contract clients",
+    "Same-day photographic documentation",
+    "Dedicated account support on Premium & Enterprise tiers",
+  ],
+  benefits: [
+    {
+      title: "Predictable Costs",
+      description: "Fixed annual pricing with no hidden costs or surprise invoices.",
+      icon: "tag",
+    },
+    {
+      title: "Priority Response",
+      description: "Contract clients receive faster, prioritised callouts when issues arise.",
+      icon: "clock",
+    },
+    {
+      title: "Full Documentation",
+      description: "Same-day reports and photos after every visit, ready for landlords and owners.",
+      icon: "clipboard",
+    },
+    {
+      title: "Dedicated Support",
+      description: "A single accountable point of contact who knows your property or portfolio.",
+      icon: "headset",
+    },
+  ],
+} as const;
+
+export const contractsFaqs: Faq[] = [
+  {
+    question: "What does a maintenance contract include?",
+    answer:
+      "Our contracts typically include two full AC services per year, filter and coil cleaning, drainage checks, performance reports and priority booking. Premium and Enterprise tiers add priority callouts, refrigerant checks and dedicated account management.",
+  },
+  {
+    question: "Do you offer contracts for residential and commercial properties?",
+    answer:
+      "Yes. We offer residential contracts for homeowners and landlords, and commercial contracts for property managers, villa communities and larger portfolios with bespoke volume pricing.",
+  },
+  {
+    question: "Can preventative maintenance reduce emergency callouts?",
+    answer:
+      "Absolutely. Scheduled servicing catches small issues before they become expensive failures — reducing downtime, tenant complaints and unexpected repair costs across your portfolio.",
+  },
+  {
+    question: "How is contract pricing determined?",
+    answer:
+      "Every property and portfolio is different. We assess your specific requirements and provide a transparent, itemised quote — free and returned within the hour.",
+  },
+  {
+    question: "Are reports included with every contract visit?",
+    answer:
+      "Always. Every visit includes before-and-after photography and a same-day written report, giving you complete transparency and evidence for landlords and owners.",
+  },
+];
+
 /* ---------- SERVICES SECTION HEADING ---------- */
 export const servicesSection = {
   eyebrow: "What We Offer",
@@ -284,7 +474,7 @@ export const services: Service[] = [
       "Steam cleaning",
       "Odour & bacteria removal",
     ],
-    href: "/home-sanitisation",
+    href: "/deep-cleaning",
   },
   {
     slug: "water-filtration",
@@ -333,7 +523,7 @@ export const services: Service[] = [
       "Detailed reporting",
       "Defect identification",
     ],
-    href: "/snagging-inspections",
+    href: "/snagging",
   },
 ];
 
@@ -1078,10 +1268,10 @@ export const legalLinks = [
 ] as const;
 
 export const companyLinks = [
-  { label: "About Us", href: "/#about" },
-  { label: "Healthier Homes", href: "/#wellness" },
-  { label: "Why Choose Us", href: "/#why" },
-  { label: "Property Managers", href: "/property-managers" },
-  { label: "Service Areas", href: "/#areas" },
+  { label: "About Us", href: "/about" },
+  { label: "Deep Cleaning", href: "/deep-cleaning" },
+  { label: "Water Filtration", href: "/water-filtration" },
+  { label: "Snagging", href: "/snagging" },
+  { label: "Contracts", href: "/contracts" },
   { label: "Contact", href: "/#contact" },
 ] as const;

@@ -54,7 +54,7 @@ export default function SnaggingCTA() {
 
             <Reveal delay={0.2}>
               <div className="mt-9 flex flex-wrap gap-4">
-                <Link href="/snagging-inspections" className="btn btn-emerald">
+                <Link href="/snagging" className="btn btn-emerald">
                   Book an Inspection
                   <Icon name="arrowRight" className="h-4 w-4" />
                 </Link>

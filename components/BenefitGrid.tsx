@@ -10,7 +10,7 @@ type BenefitGridProps = {
   eyebrow: string;
   title: React.ReactNode;
   description?: string;
-  benefits: Benefit[];
+  benefits: readonly Benefit[];
   muted?: boolean;
 };
 

@@ -62,7 +62,7 @@ export default function Snagging() {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <Link href="/snagging-inspections" className="btn btn-emerald mt-6">
+              <Link href="/snagging" className="btn btn-emerald mt-6">
                 Explore Snagging Inspections
                 <Icon name="arrowRight" className="h-4 w-4" />
               </Link>
