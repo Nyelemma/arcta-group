@@ -34,7 +34,8 @@ export const business = {
   instagramHandle: "arcta.ae",
   instagramUrl: "https://www.instagram.com/arcta.ae/",
   hours: "Sun–Sat, 24/7 emergency support",
-  logo: "/images/logo/arcta-logo.jpg",
+  logo: "/images/logo/arcta-logo.png",
+  logoLight: "/images/logo/arcta-logo-light.png",
   logoAlt: "Arcta Group — premium property services across the UAE",
 } as const;
 
