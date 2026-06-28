@@ -276,71 +276,31 @@ export const aboutPage = {
     "We work with villa communities, property management companies, holiday-home operators and homeowners across Dubai and the wider UAE — delivering the same consistent standard whether you manage one property or five hundred.",
 } as const;
 
-/* ---------- ANNUAL SERVICE CONTRACTS PAGE ---------- */
+/* ---------- ANNUAL MAINTENANCE CONTRACTS / HOME HEALTH PLANS PAGE ---------- */
 export const contractsPage = {
   hero: {
     eyebrow: "Annual Maintenance Contracts",
     title: "Annual maintenance contract in Dubai",
     description:
-      "One yearly plan that covers your AC maintenance, property care and priority callouts — with fixed transparent pricing, full documentation and a direct line to our team. Replace unpredictable repair bills with scheduled care you can rely on.",
+      "Home health plans designed to protect your family's health — not just maintain your home. Cleaner air, purer water and healthier surfaces under one annual plan, with 60-minute priority callouts and fully documented visits.",
     highlights: [
-      "Priority callouts for contract clients",
-      "24-hour response across the UAE",
-      "Fully documented every visit",
+      "60-minute priority callouts",
+      "Annual home health report",
+      "Satisfaction guarantee",
     ],
   },
-  intro: {
-    eyebrow: "Yearly Maintenance Plans",
-    title: "One plan. Complete property care.",
+  plans: {
+    eyebrow: "Our Home Health Plans",
+    title: "Protect your family's health, not just your home",
     description:
-      "If you own or manage a villa or apartment in Dubai, an annual maintenance contract replaces unpredictable repair bills with one fixed cost and scheduled maintenance. Arcta Group covers AC servicing, duct and coil care, and property maintenance under a single agreement — with priority response and same-day reports after every visit.",
+      "Annual contracts designed to protect your family's health — not just maintain your home.",
   },
-  types: [
-    {
-      title: "Residential Contracts",
-      description:
-        "Annual AC and property maintenance for homeowners and landlords. Scheduled services, priority booking and same-day reports after every visit.",
-      icon: "key",
-    },
-    {
-      title: "Commercial Contracts",
-      description:
-        "Bespoke maintenance plans for property managers, villa communities and portfolios — with dedicated support and monthly reporting.",
-      icon: "building",
-    },
-    {
-      title: "Preventative Maintenance",
-      description:
-        "Scheduled servicing that catches issues early, reduces emergency callouts and keeps properties running efficiently all year round.",
-      icon: "shield",
-    },
-  ],
-  coverage: [
-    {
-      title: "Air Conditioning",
-      description:
-        "Full inspection, filter and coil cleaning, drainage checks and performance reports. Well-serviced units run more efficiently — lowering your cooling costs through the UAE summer.",
-      icon: "ac",
-    },
-    {
-      title: "Duct & Coil Care",
-      description:
-        "Duct and coil cleaning where included in your plan — improving indoor air quality and system efficiency in Dubai's dusty climate.",
-      icon: "duct",
-    },
-    {
-      title: "Property Maintenance",
-      description:
-        "Handyman services, general repairs and preventative upkeep — one team for everything your property needs.",
-      icon: "tools",
-    },
-    {
-      title: "Priority Callouts",
-      description:
-        "Contract clients receive prioritised response when issues arise — with same-day attendance wherever possible across Dubai and the UAE.",
-      icon: "clock",
-    },
-  ],
+  whyArcta: {
+    eyebrow: "Why Arcta?",
+    title: "We protect what you can't see",
+    paragraph:
+      "Most maintenance companies clean what you can see. We protect what you can't — the air circulating through your ducts, the water coming out of your taps, the bacteria living on your surfaces. Our plans are built around your family's health, not just your property's appearance.",
+  },
   whyYearly: [
     {
       title: "Cost Control",
@@ -374,36 +334,6 @@ export const contractsPage = {
     "Holiday home operators",
     "Real estate agencies",
   ],
-  included: [
-    "Scheduled AC servicing (typically twice yearly)",
-    "Filter and coil cleaning each visit",
-    "Drainage checks and performance reports",
-    "Priority callouts for contract clients",
-    "Same-day photographic documentation",
-    "Dedicated account support on Premium & Enterprise tiers",
-  ],
-  benefits: [
-    {
-      title: "Predictable Costs",
-      description: "Fixed annual pricing with no hidden costs or surprise invoices.",
-      icon: "tag",
-    },
-    {
-      title: "Priority Response",
-      description: "Contract clients receive faster, prioritised callouts when issues arise.",
-      icon: "clock",
-    },
-    {
-      title: "Full Documentation",
-      description: "Same-day reports and photos after every visit, ready for landlords and owners.",
-      icon: "clipboard",
-    },
-    {
-      title: "Dedicated Support",
-      description: "A single accountable point of contact who knows your property or portfolio.",
-      icon: "headset",
-    },
-  ],
 } as const;
 
 export const contractsFaqs: Faq[] = [
@@ -413,14 +343,14 @@ export const contractsFaqs: Faq[] = [
       "An annual maintenance contract is a 12-month agreement that bundles regular AC maintenance, property care and priority callouts into one plan. You get scheduled visits, documented reports and fixed pricing instead of paying separately for each repair and service.",
   },
   {
-    question: "What does an Arcta Group contract include?",
+    question: "What does an Arcta Group home health plan include?",
     answer:
-      "Our contracts typically include two full AC services per year, filter and coil cleaning, drainage checks, performance reports and priority booking. Premium and Enterprise tiers add priority callouts, refrigerant checks and dedicated account management.",
+      "Our Essential Plan includes three full AC services a year, a full duct deep clean and sanitisation, a coil strip-down and internal restore, two professional deep cleans (steam, electrostatic and ozone), unlimited 60-minute priority callouts, written reports with before and after photos and an annual home health report. The Pure Home Plan adds whole-home water filtration supply and installation, your first filter replacement and priority scheduling.",
   },
   {
-    question: "Do you offer contracts for residential and commercial properties?",
+    question: "What is the difference between the Essential and Pure Home plans?",
     answer:
-      "Yes. We offer residential contracts for homeowners and landlords, and commercial contracts for property managers, villa communities and larger portfolios with bespoke volume pricing.",
+      "Both plans protect the air you breathe and the surfaces you touch with scheduled AC servicing, duct and coil care and professional deep cleans. The Pure Home Plan includes everything in Essential and adds whole-home water filtration — supply, installation, your first filter replacement and a water quality report before and after installation.",
   },
   {
     question: "Why choose a yearly plan over one-off repairs?",
@@ -896,6 +826,7 @@ export const propertyManagers = {
 /* ---------- ANNUAL MAINTENANCE CONTRACTS ---------- */
 export type PricingTier = {
   name: string;
+  tagline?: string;
   priceLabel: string;
   priceNote: string;
   description: string;
@@ -907,50 +838,41 @@ export type PricingTier = {
 
 export const pricing: PricingTier[] = [
   {
-    name: "Standard",
+    name: "Essential Plan",
+    tagline: "Clean Air. Healthy Home.",
     priceLabel: "Tailored Quote",
-    priceNote: "based on your property",
-    description: "Essential cover for homeowners and smaller portfolios.",
+    priceNote: "based on your home",
+    description:
+      "Year-round protection for the air you breathe and the surfaces you touch.",
     features: [
-      "Two full services annually",
-      "Filter cleaning each visit",
-      "Coil cleaning each visit",
-      "Drain checks and flush",
-      "Performance report after each visit",
-      "Priority booking",
+      "3 × full AC service per year",
+      "1 × full duct deep clean & sanitisation",
+      "1 × full coil strip-down & internal restore",
+      "2 × professional deep clean (steam, electrostatic & ozone)",
+      "Unlimited priority callouts — 60 minute response",
+      "Written report & before/after photos every visit",
+      "Annual home health report",
+      "20% discount on all additional services",
+      "Satisfaction guarantee — we return free if you're not happy",
     ],
     cta: { label: "Get a Quote", href: "/#contact" },
   },
   {
-    name: "Premium",
+    name: "Pure Home Plan",
+    tagline: "Clean Air. Pure Water. Healthy Home.",
     priceLabel: "Tailored Quote",
-    priceNote: "based on your portfolio",
-    description: "Our most popular plan for landlords and managers.",
+    priceNote: "based on your home",
+    description: "Everything in Essential, plus whole-home water filtration.",
     features: [
-      "Everything in Standard",
-      "Priority callouts",
-      "Refrigerant level checks",
-      "4-hour priority response",
-      "Same-day job reports",
-      "Dedicated account support",
+      "Everything in the Essential Plan",
+      "Water filtration system supply & installation",
+      "First filter replacement included",
+      "Water quality report before & after installation",
+      "Priority scheduling — your jobs booked first",
     ],
     cta: { label: "Get a Quote", href: "/#contact" },
     highlighted: true,
     badge: "Most Popular",
-  },
-  {
-    name: "Enterprise",
-    priceLabel: "Bespoke",
-    priceNote: "volume pricing — 50+ units",
-    description: "Built for large property portfolios and communities.",
-    features: [
-      "Bespoke pricing for large portfolios",
-      "Dedicated technician allocation",
-      "Monthly reporting dashboard",
-      "24/7 emergency support cover",
-      "Quarterly review meetings",
-    ],
-    cta: { label: "Talk To Us", href: "/#contact" },
   },
 ];
 

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { pricing } from "@/lib/content";
+import { pricing, contractsPage } from "@/lib/content";
 import SectionHeading from "./SectionHeading";
 import { Icon } from "./Icons";
 
@@ -11,16 +11,17 @@ export default function Pricing() {
     <section id="pricing" className="relative bg-white py-20 lg:py-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Annual Maintenance Contracts"
+          eyebrow={contractsPage.plans.eyebrow}
           title={
             <>
-              Predictable costs. <span className="text-brand">Reliable service.</span>
+              Protect your family&apos;s health,{" "}
+              <span className="text-brand">not just your home.</span>
             </>
           }
-          description="Every portfolio is different. We assess your requirements and provide a transparent, itemised quote with no hidden costs — returned within the hour."
+          description={contractsPage.plans.description}
         />
 
-        <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-4xl items-start gap-6 sm:grid-cols-2">
           {pricing.map((tier, i) => (
             <motion.div
               key={tier.name}
@@ -42,14 +43,25 @@ export default function Pricing() {
                 </>
               )}
 
-              <div className="relative flex items-center justify-between">
+              <div className="relative flex items-center justify-between gap-3">
                 <h3 className="font-display text-xl font-bold">{tier.name}</h3>
                 {tier.badge && (
-                  <span className="rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold text-white">
+                  <span className="shrink-0 rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold text-white">
                     {tier.badge}
                   </span>
                 )}
               </div>
+
+              {tier.tagline && (
+                <p
+                  className={[
+                    "relative mt-3 font-display text-base font-semibold",
+                    tier.highlighted ? "text-brand" : "text-royal-600",
+                  ].join(" ")}
+                >
+                  {tier.tagline}
+                </p>
+              )}
 
               <p
                 className={[
