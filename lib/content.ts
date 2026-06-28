@@ -62,9 +62,9 @@ export const serviceNav = [
 
 /* ---------- HERO ---------- */
 export const hero = {
-  image: "/images/hero/hero.jpg",
+  image: "/images/hero/hero.png",
   imageAlt:
-    "Uniformed Arcta Group technician servicing an air conditioning unit in a premium Dubai villa",
+    "Arcta Group technician in branded uniform servicing an air conditioning vent in a premium Dubai home",
   eyebrow: "UAE Property Services",
   headline: "Professional Property Services Across The UAE",
   highlight: ["Property", "Services"],
@@ -1333,14 +1333,19 @@ export const seoKeywords = [
   "property snagging UAE",
   "building inspection Dubai",
   "AC maintenance UAE",
+  "AC servicing Dubai",
   "annual maintenance contract Dubai",
+  "annual service contract Dubai",
+  "AMC Dubai",
   "home sanitisation Dubai",
   "deep cleaning Dubai",
   "ozone treatment Dubai",
   "water filtration Dubai",
   "villa water filter UAE",
   "indoor air quality Dubai",
+  "property management maintenance UAE",
   "Arcta Group",
+  "Arcta Group Dubai",
 ];
 
 /* ---------- LEGAL / FOOTER ---------- */

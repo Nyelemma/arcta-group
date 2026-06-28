@@ -29,11 +29,18 @@ export const metadata: Metadata = {
     template: "%s | Arcta Group",
   },
   description: DESCRIPTION,
+  applicationName: business.name,
   keywords: seoKeywords,
   authors: [{ name: business.name }],
   creator: business.name,
   publisher: business.name,
   alternates: { canonical: "/" },
+  appleWebApp: {
+    capable: true,
+    title: business.name,
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: { telephone: true, email: true, address: true },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,

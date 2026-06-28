@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { hero } from "@/lib/content";
 import { Icon } from "./Icons";
@@ -122,16 +123,17 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-navy-800 to-navy-900 shadow-card-lg grain">
-              <div className="absolute inset-0 bg-grid-faint [background-size:30px_30px] opacity-30" />
-              <div className="absolute -right-10 top-10 h-44 w-44 rounded-full bg-royal-500/30 blur-3xl" />
-              <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-emerald-500/20 blur-3xl" />
-              <div className="relative flex h-full flex-col items-center justify-center gap-4 p-8 text-center">
-                <Icon name="ac" className="h-16 w-16 text-white/30" />
-                <span className="text-xs font-medium uppercase tracking-widest2 text-white/40">
-                  Hero image slot
-                </span>
-              </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-navy-900 shadow-card-lg">
+              <Image
+                src={hero.image}
+                alt={hero.imageAlt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-navy-950/10 to-transparent" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
             </div>
 
             {/* Floating stat card */}
