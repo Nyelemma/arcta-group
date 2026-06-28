@@ -49,12 +49,6 @@ export default function Navbar() {
           </div>
 
           <div className="hidden shrink-0 items-center gap-3 xl:flex">
-            <a
-              href={business.phoneHref}
-              className="hidden text-sm font-semibold text-navy-900 2xl:block"
-            >
-              {business.phoneDisplay}
-            </a>
             <Link href="/#contact" className="btn btn-primary px-5 py-2.5 text-sm">
               Request Service
             </Link>
