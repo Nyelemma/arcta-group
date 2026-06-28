@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
+import Logo from "./Logo";
+
 export default function Loader() {
   const [done, setDone] = useState(false);
   const reduce = useReducedMotion();
@@ -32,14 +34,7 @@ export default function Loader() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gradient font-display text-xl font-bold text-white shadow-royal-glow">
-                A
-              </span>
-              <span className="font-display text-2xl font-bold tracking-tight text-white">
-                Arcta Group
-              </span>
-            </div>
+            <Logo variant="loader" linked={false} />
             <div className="h-0.5 w-40 overflow-hidden rounded-full bg-white/10">
               <motion.div
                 className="h-full bg-brand-gradient"

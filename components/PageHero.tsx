@@ -14,7 +14,7 @@ type PageHeroProps = {
   crumbs?: Crumb[];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
-  highlights?: string[];
+  highlights?: readonly string[];
 };
 
 export default function PageHero({

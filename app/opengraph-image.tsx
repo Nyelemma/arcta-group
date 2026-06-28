@@ -16,7 +16,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px",
-          background: "linear-gradient(135deg, #060B16 0%, #0B1426 55%, #172A6B 100%)",
+          background: "linear-gradient(135deg, #060D16 0%, #0E1B2B 55%, #1C3454 100%)",
           fontFamily: "sans-serif",
         }}
       >
@@ -29,7 +29,7 @@ export default function OpengraphImage() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "linear-gradient(135deg, #1D4ED8 0%, #10B981 100%)",
+              background: "linear-gradient(135deg, #C9A84B 0%, #D4B85A 100%)",
               fontSize: "44px",
               fontWeight: 800,
               color: "white",
@@ -52,7 +52,7 @@ export default function OpengraphImage() {
           >
             Professional Property Services Across The UAE
           </div>
-          <div style={{ fontSize: "30px", color: "#93B4FD", maxWidth: "880px" }}>
+          <div style={{ fontSize: "30px", color: "#DFC67E", maxWidth: "880px" }}>
             AC Maintenance · Duct Cleaning · Snagging Inspections · Property Maintenance
           </div>
         </div>

@@ -18,7 +18,7 @@ html {
 
 body {
   background-color: var(--bg);
-  color: #0b1426;
+  color: #0e1b2b;
   font-feature-settings: "ss01", "cv01";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -55,8 +55,8 @@ body {
 }
 
 ::selection {
-  background: rgba(29, 78, 216, 0.18);
-  color: #0b1426;
+  background: rgba(201, 168, 75, 0.22);
+  color: #0e1b2b;
 }
 
 @layer components {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "./Logo";
 import { business, serviceNav, companyLinks, legalLinks, serviceAreas } from "@/lib/content";
 import { Icon } from "./Icons";
 
@@ -11,14 +12,7 @@ export default function Footer() {
       <div className="container-x relative py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-gradient font-display text-lg font-bold text-white">
-                A
-              </span>
-              <span className="font-display text-lg font-bold tracking-tight text-white">
-                Arcta Group
-              </span>
-            </Link>
+            <Logo variant="footer" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist-400">
               Premium AC maintenance, duct cleaning, home sanitisation, water filtration and property
               services — helping create cleaner air and healthier homes across the UAE.

@@ -29,11 +29,13 @@ export const business = {
   whatsapp: "https://wa.me/971505540919",
   whatsappMessage:
     "https://wa.me/971505540919?text=Hi%20Arcta%20Group%2C%20I%27d%20like%20to%20request%20a%20service%20for%20my%20property.",
-  email: "alie@arctagroup.ae",
-  emailHref: "mailto:alie@arctagroup.ae",
+  email: "info@arctagroup.ae",
+  emailHref: "mailto:info@arctagroup.ae",
   instagramHandle: "arcta.ae",
   instagramUrl: "https://www.instagram.com/arcta.ae/",
   hours: "Sun–Sat, 24/7 emergency support",
+  logo: "/images/logo/arcta-logo.jpg",
+  logoAlt: "Arcta Group — premium property services across the UAE",
 } as const;
 
 /* ---------- NAVIGATION ---------- */
@@ -43,7 +45,7 @@ export const nav = [
   { label: "Deep Cleaning", href: "/deep-cleaning" },
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Snagging", href: "/snagging" },
-  { label: "Contracts", href: "/contracts" },
+  { label: "Annual Service Contracts", href: "/contracts" },
 ] as const;
 
 export const serviceNav = [
@@ -53,7 +55,7 @@ export const serviceNav = [
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Property Maintenance", href: "/property-maintenance" },
   { label: "Snagging Inspections", href: "/snagging" },
-  { label: "Maintenance Contracts", href: "/contracts" },
+  { label: "Annual Service Contracts", href: "/contracts" },
   { label: "Property Managers", href: "/property-managers" },
 ] as const;
 
@@ -218,7 +220,7 @@ export const homepageServices: HomepageService[] = [
     href: "/snagging",
   },
   {
-    title: "Maintenance Contracts",
+    title: "Annual Service Contracts",
     short:
       "Predictable annual contracts for homeowners, landlords and property portfolios across the UAE.",
     icon: "document",
@@ -273,33 +275,103 @@ export const aboutPage = {
     "We work with villa communities, property management companies, holiday-home operators and homeowners across Dubai and the wider UAE — delivering the same consistent standard whether you manage one property or five hundred.",
 } as const;
 
-/* ---------- CONTRACTS PAGE ---------- */
+/* ---------- ANNUAL SERVICE CONTRACTS PAGE ---------- */
 export const contractsPage = {
   hero: {
-    eyebrow: "Maintenance Contracts",
-    title: "Predictable costs, reliable service",
+    eyebrow: "Annual Service Contracts",
+    title: "Annual maintenance contract in Dubai",
     description:
-      "Annual maintenance contracts tailored to your property or portfolio — fixed transparent pricing, priority response and full documentation on every visit.",
+      "One yearly plan that covers your AC maintenance, property care and priority callouts — with fixed transparent pricing, full documentation and a direct line to our team. Replace unpredictable repair bills with scheduled care you can rely on.",
+    highlights: [
+      "Priority callouts for contract clients",
+      "24-hour response across the UAE",
+      "Fully documented every visit",
+    ],
+  },
+  intro: {
+    eyebrow: "Yearly Maintenance Plans",
+    title: "One plan. Complete property care.",
+    description:
+      "If you own or manage a villa or apartment in Dubai, an annual service contract replaces unpredictable repair bills with one fixed cost and scheduled maintenance. Arcta Group covers AC servicing, duct and coil care, and property maintenance under a single agreement — with priority response and same-day reports after every visit.",
   },
   types: [
     {
       title: "Residential Contracts",
       description:
-        "Annual AC and property maintenance for homeowners and landlords. Two scheduled services per year, priority booking and same-day reports after every visit.",
+        "Annual AC and property maintenance for homeowners and landlords. Scheduled services, priority booking and same-day reports after every visit.",
       icon: "key",
     },
     {
       title: "Commercial Contracts",
       description:
-        "Bespoke maintenance plans for property managers, villa communities and commercial portfolios — with dedicated support and monthly reporting.",
+        "Bespoke maintenance plans for property managers, villa communities and portfolios — with dedicated support and monthly reporting.",
       icon: "building",
     },
     {
       title: "Preventative Maintenance",
       description:
-        "Scheduled servicing that catches issues early, reduces emergency callouts and keeps your properties running efficiently all year round.",
+        "Scheduled servicing that catches issues early, reduces emergency callouts and keeps properties running efficiently all year round.",
       icon: "shield",
     },
+  ],
+  coverage: [
+    {
+      title: "Air Conditioning",
+      description:
+        "Full inspection, filter and coil cleaning, drainage checks and performance reports. Well-serviced units run more efficiently — lowering your cooling costs through the UAE summer.",
+      icon: "ac",
+    },
+    {
+      title: "Duct & Coil Care",
+      description:
+        "Duct and coil cleaning where included in your plan — improving indoor air quality and system efficiency in Dubai's dusty climate.",
+      icon: "duct",
+    },
+    {
+      title: "Property Maintenance",
+      description:
+        "Handyman services, general repairs and preventative upkeep — one team for everything your property needs.",
+      icon: "tools",
+    },
+    {
+      title: "Priority Callouts",
+      description:
+        "Contract clients receive prioritised response when issues arise — with same-day attendance wherever possible across Dubai and the UAE.",
+      icon: "clock",
+    },
+  ],
+  whyYearly: [
+    {
+      title: "Cost Control",
+      description:
+        "A yearly plan converts unpredictable repair bills into one fixed annual cost. Early detection during scheduled visits stops small faults from becoming expensive failures.",
+      icon: "tag",
+    },
+    {
+      title: "Priority in Peak Season",
+      description:
+        "Contract holders are served first when demand spikes in summer. One-off callers wait longer — exactly when an AC failure is least bearable.",
+      icon: "clock",
+    },
+    {
+      title: "One Point of Contact",
+      description:
+        "No chasing separate vendors for AC, maintenance and repairs. One agreement, one team, one schedule — and you deal directly with us.",
+      icon: "phone",
+    },
+    {
+      title: "Longer Equipment Life",
+      description:
+        "Routine servicing keeps compressors, coils and drainage systems running efficiently for years longer than neglected units.",
+      icon: "shield",
+    },
+  ],
+  builtFor: [
+    "Homeowners & villa residents",
+    "Landlords & investors",
+    "Property management companies",
+    "Holiday home operators",
+    "Real estate agencies",
   ],
   included: [
     "Scheduled AC servicing (typically twice yearly)",
@@ -335,7 +407,12 @@ export const contractsPage = {
 
 export const contractsFaqs: Faq[] = [
   {
-    question: "What does a maintenance contract include?",
+    question: "What is an annual service contract?",
+    answer:
+      "An annual service contract is a 12-month agreement that bundles regular AC maintenance, property care and priority callouts into one plan. You get scheduled visits, documented reports and fixed pricing instead of paying separately for each repair and service.",
+  },
+  {
+    question: "What does an Arcta Group contract include?",
     answer:
       "Our contracts typically include two full AC services per year, filter and coil cleaning, drainage checks, performance reports and priority booking. Premium and Enterprise tiers add priority callouts, refrigerant checks and dedicated account management.",
   },
@@ -345,19 +422,24 @@ export const contractsFaqs: Faq[] = [
       "Yes. We offer residential contracts for homeowners and landlords, and commercial contracts for property managers, villa communities and larger portfolios with bespoke volume pricing.",
   },
   {
-    question: "Can preventative maintenance reduce emergency callouts?",
+    question: "Why choose a yearly plan over one-off repairs?",
     answer:
-      "Absolutely. Scheduled servicing catches small issues before they become expensive failures — reducing downtime, tenant complaints and unexpected repair costs across your portfolio.",
+      "Dubai's climate puts constant strain on AC systems. Reactive, one-off repairs cost more and arrive slower — often during peak summer when every company is fully booked. A yearly plan gives you scheduled care, priority response and predictable costs.",
   },
   {
     question: "How is contract pricing determined?",
     answer:
-      "Every property and portfolio is different. We assess your specific requirements and provide a transparent, itemised quote — free and returned within the hour.",
+      "Every property and portfolio is different. A villa with several AC units costs more to cover than a one-bedroom apartment. We assess your requirements and provide a transparent, itemised quote — free and returned within the hour.",
   },
   {
     question: "Are reports included with every contract visit?",
     answer:
       "Always. Every visit includes before-and-after photography and a same-day written report, giving you complete transparency and evidence for landlords and owners.",
+  },
+  {
+    question: "Do you work with tenants, landlords and property managers?",
+    answer:
+      "Yes. We work with homeowners, tenants, landlords, property managers and real estate agencies. Each plan is matched to who is responsible for the property.",
   },
 ];
 
@@ -784,7 +866,7 @@ export const propertyManagers = {
   ],
   features: [
     {
-      title: "Service Contracts",
+      title: "Annual Service Contracts",
       description:
         "Fixed, transparent annual contracts tailored to your portfolio — predictable costs with no surprises.",
       icon: "document",
@@ -1272,6 +1354,6 @@ export const companyLinks = [
   { label: "Deep Cleaning", href: "/deep-cleaning" },
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Snagging", href: "/snagging" },
-  { label: "Contracts", href: "/contracts" },
+  { label: "Annual Service Contracts", href: "/contracts" },
   { label: "Contact", href: "/#contact" },
 ] as const;

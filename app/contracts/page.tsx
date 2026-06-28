@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import PageHero from "@/components/PageHero";
+import TrustBar from "@/components/TrustBar";
 import Pricing from "@/components/Pricing";
 import BenefitGrid from "@/components/BenefitGrid";
 import FAQ from "@/components/FAQ";
@@ -14,11 +15,12 @@ import { contractsPage, contractsFaqs } from "@/lib/content";
 import { buildMetadata, JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Maintenance Contracts Dubai | Residential & Commercial AMC | Arcta Group",
+  title: "Annual Service Contracts Dubai | Residential & Commercial AMC | Arcta Group",
   description:
-    "Annual maintenance contracts for residential and commercial properties in Dubai and the UAE. Preventative maintenance, priority callouts and fixed transparent pricing from Arcta Group.",
+    "Annual service contracts for residential and commercial properties in Dubai and the UAE. AC maintenance, priority callouts, preventative care and fixed transparent pricing from Arcta Group.",
   path: "/contracts",
   keywords: [
+    "annual service contract Dubai",
     "annual maintenance contract Dubai",
     "AMC Dubai",
     "residential maintenance contract UAE",
@@ -36,17 +38,30 @@ export default function ContractsPage() {
           eyebrow={contractsPage.hero.eyebrow}
           title={
             <>
-              Predictable costs. <span className="text-brand">Reliable service.</span>
+              {contractsPage.hero.title.split(" in ")[0]}{" "}
+              <span className="text-brand">in Dubai</span>
             </>
           }
           description={contractsPage.hero.description}
           icon="document"
-          crumbs={[{ label: "Contracts", href: "/contracts" }]}
+          crumbs={[{ label: "Annual Service Contracts", href: "/contracts" }]}
           secondaryCta={{ label: "View Plans", href: "#pricing" }}
-          highlights={["Residential & commercial", "Preventative maintenance", "Free quote in one hour"]}
+          highlights={contractsPage.hero.highlights}
         />
 
+        <TrustBar />
+
         <section className="bg-white py-20 lg:py-28">
+          <div className="container-x">
+            <SectionHeading
+              eyebrow={contractsPage.intro.eyebrow}
+              title={contractsPage.intro.title}
+              description={contractsPage.intro.description}
+            />
+          </div>
+        </section>
+
+        <section className="bg-mist-100 py-20 lg:py-28">
           <div className="container-x">
             <SectionHeading
               eyebrow="Contract Types"
@@ -56,7 +71,7 @@ export default function ContractsPage() {
             <div className="mt-14 grid gap-6 md:grid-cols-3">
               {contractsPage.types.map((type, i) => (
                 <Reveal key={type.title} delay={i * 0.08}>
-                  <div className="h-full rounded-3xl border border-mist-200 bg-mist-100/60 p-7 transition-all duration-300 hover:border-royal-200 hover:bg-white hover:shadow-card">
+                  <div className="h-full rounded-3xl border border-mist-200 bg-white p-7 transition-all duration-300 hover:border-royal-200 hover:shadow-card">
                     <span className="grid h-12 w-12 place-items-center rounded-xl bg-royal-50 text-royal-600">
                       <Icon name={type.icon as IconName} className="h-6 w-6" />
                     </span>
@@ -71,11 +86,36 @@ export default function ContractsPage() {
           </div>
         </section>
 
+        <section className="bg-white py-20 lg:py-28">
+          <div className="container-x">
+            <SectionHeading
+              eyebrow="What Each Plan Covers"
+              title="Complete property care under one agreement"
+              description="Your annual service contract bundles the maintenance your property needs most — with scheduled visits, documented reports and priority response when it matters."
+            />
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {contractsPage.coverage.map((item, i) => (
+                <Reveal key={item.title} delay={i * 0.08}>
+                  <div className="h-full rounded-3xl border border-mist-200 bg-mist-100/60 p-6 transition-all duration-300 hover:border-royal-200 hover:bg-white hover:shadow-card">
+                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-royal-50 text-royal-600">
+                      <Icon name={item.icon as IconName} className="h-5 w-5" />
+                    </span>
+                    <h3 className="mt-4 font-display text-base font-bold text-navy-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-mist-600">{item.description}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <BenefitGrid
-          eyebrow="Why A Contract"
-          title="The smart way to maintain property"
-          description="An annual contract turns unpredictable maintenance into a fixed, reliable service you never have to think about."
-          benefits={contractsPage.benefits}
+          eyebrow="Why A Yearly Plan"
+          title="Why a yearly plan beats one-off repairs"
+          description="Dubai's climate puts constant strain on AC systems. A yearly contract gives you scheduled care, priority response and predictable costs — instead of reactive repairs when demand is highest."
+          benefits={contractsPage.whyYearly}
           muted
         />
 
@@ -102,15 +142,42 @@ export default function ContractsPage() {
           </div>
         </section>
 
+        <section className="bg-mist-100 py-20 lg:py-28">
+          <div className="container-x">
+            <SectionHeading
+              eyebrow="Who We Serve"
+              title="Built for villas, apartments and managed buildings"
+              description="We work with homeowners, landlords, property managers and agencies across Dubai and the wider UAE."
+              align="center"
+            />
+            <Reveal>
+              <div className="mx-auto mt-10 flex max-w-3xl flex-wrap justify-center gap-3">
+                {contractsPage.builtFor.map((item) => (
+                  <span key={item} className="chip px-4 py-2 text-sm">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <BenefitGrid
+          eyebrow="Contract Benefits"
+          title="The smart way to maintain property"
+          description="An annual service contract turns unpredictable maintenance into a fixed, reliable service you never have to think about."
+          benefits={contractsPage.benefits}
+        />
+
         <div id="pricing">
           <Pricing />
         </div>
         <FAQ items={contractsFaqs} />
         <ServiceEnquiry
-          title="Request a Contract Quote"
+          title="Request an Annual Service Contract Quote"
           description="Tell us about your property or portfolio and we'll build a contract that fits — free and returned within the hour."
           ctaLabel="Request Quote"
-          whatsappText="Hi Arcta Group, I'd like to request a maintenance contract quote for my property."
+          whatsappText="Hi Arcta Group, I'd like to request an annual service contract quote for my property."
         />
       </main>
       <Footer />
@@ -118,15 +185,15 @@ export default function ContractsPage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "Maintenance Contracts",
+            name: "Annual Service Contracts",
             description: contractsPage.hero.description,
             path: "/contracts",
-            serviceType: "Annual Maintenance Contract",
+            serviceType: "Annual Service Contract",
           }),
           faqSchema(contractsFaqs),
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Contracts", path: "/contracts" },
+            { name: "Annual Service Contracts", path: "/contracts" },
           ]),
         ]}
       />

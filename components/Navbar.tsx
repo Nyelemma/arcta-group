@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import Logo from "./Logo";
 import { business, nav } from "@/lib/content";
 import { Icon } from "./Icons";
 
@@ -35,19 +36,7 @@ export default function Navbar() {
         ].join(" ")}
       >
         <nav className="container-x flex h-[72px] items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="Arcta Group home">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-gradient font-display text-lg font-bold text-white shadow-royal-glow">
-              A
-            </span>
-            <span
-              className={[
-                "font-display text-lg font-bold tracking-tight transition-colors",
-                scrolled ? "text-navy-900" : "text-navy-900",
-              ].join(" ")}
-            >
-              Arcta Group
-            </span>
-          </Link>
+          <Logo />
 
           <div className="hidden items-center gap-1 lg:flex">
             {nav.map((item) => (
