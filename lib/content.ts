@@ -46,7 +46,7 @@ export const nav = [
   { label: "Deep Cleaning", href: "/deep-cleaning" },
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Snagging", href: "/snagging" },
-  { label: "Annual Service Contracts", href: "/contracts" },
+  { label: "Annual Maintenance Contracts", href: "/contracts" },
 ] as const;
 
 export const serviceNav = [
@@ -56,7 +56,7 @@ export const serviceNav = [
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Property Maintenance", href: "/property-maintenance" },
   { label: "Snagging Inspections", href: "/snagging" },
-  { label: "Annual Service Contracts", href: "/contracts" },
+  { label: "Annual Maintenance Contracts", href: "/contracts" },
   { label: "Property Managers", href: "/property-managers" },
 ] as const;
 
@@ -221,7 +221,7 @@ export const homepageServices: HomepageService[] = [
     href: "/snagging",
   },
   {
-    title: "Annual Service Contracts",
+    title: "Annual Maintenance Contracts",
     short:
       "Predictable annual contracts for homeowners, landlords and property portfolios across the UAE.",
     icon: "document",
@@ -279,7 +279,7 @@ export const aboutPage = {
 /* ---------- ANNUAL SERVICE CONTRACTS PAGE ---------- */
 export const contractsPage = {
   hero: {
-    eyebrow: "Annual Service Contracts",
+    eyebrow: "Annual Maintenance Contracts",
     title: "Annual maintenance contract in Dubai",
     description:
       "One yearly plan that covers your AC maintenance, property care and priority callouts — with fixed transparent pricing, full documentation and a direct line to our team. Replace unpredictable repair bills with scheduled care you can rely on.",
@@ -293,7 +293,7 @@ export const contractsPage = {
     eyebrow: "Yearly Maintenance Plans",
     title: "One plan. Complete property care.",
     description:
-      "If you own or manage a villa or apartment in Dubai, an annual service contract replaces unpredictable repair bills with one fixed cost and scheduled maintenance. Arcta Group covers AC servicing, duct and coil care, and property maintenance under a single agreement — with priority response and same-day reports after every visit.",
+      "If you own or manage a villa or apartment in Dubai, an annual maintenance contract replaces unpredictable repair bills with one fixed cost and scheduled maintenance. Arcta Group covers AC servicing, duct and coil care, and property maintenance under a single agreement — with priority response and same-day reports after every visit.",
   },
   types: [
     {
@@ -408,9 +408,9 @@ export const contractsPage = {
 
 export const contractsFaqs: Faq[] = [
   {
-    question: "What is an annual service contract?",
+    question: "What is an annual maintenance contract?",
     answer:
-      "An annual service contract is a 12-month agreement that bundles regular AC maintenance, property care and priority callouts into one plan. You get scheduled visits, documented reports and fixed pricing instead of paying separately for each repair and service.",
+      "An annual maintenance contract is a 12-month agreement that bundles regular AC maintenance, property care and priority callouts into one plan. You get scheduled visits, documented reports and fixed pricing instead of paying separately for each repair and service.",
   },
   {
     question: "What does an Arcta Group contract include?",
@@ -867,7 +867,7 @@ export const propertyManagers = {
   ],
   features: [
     {
-      title: "Annual Service Contracts",
+      title: "Annual Maintenance Contracts",
       description:
         "Fixed, transparent annual contracts tailored to your portfolio — predictable costs with no surprises.",
       icon: "document",
@@ -1355,6 +1355,6 @@ export const companyLinks = [
   { label: "Deep Cleaning", href: "/deep-cleaning" },
   { label: "Water Filtration", href: "/water-filtration" },
   { label: "Snagging", href: "/snagging" },
-  { label: "Annual Service Contracts", href: "/contracts" },
+  { label: "Annual Maintenance Contracts", href: "/contracts" },
   { label: "Contact", href: "/#contact" },
 ] as const;

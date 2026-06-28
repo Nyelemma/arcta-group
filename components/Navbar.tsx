@@ -29,29 +29,30 @@ export default function Navbar() {
     <>
       <header
         className={[
-          "fixed inset-x-0 top-0 z-[120] transition-all duration-300",
-          scrolled
-            ? "border-b border-mist-200/80 bg-white/80 backdrop-blur-xl shadow-glass"
-            : "border-b border-transparent bg-transparent",
+          "fixed inset-x-0 top-0 z-[120] border-b bg-white/95 backdrop-blur-xl transition-all duration-300",
+          scrolled ? "border-mist-200 shadow-glass" : "border-mist-200/70",
         ].join(" ")}
       >
-        <nav className="container-x flex h-[72px] items-center justify-between">
+        <nav className="mx-auto flex h-[72px] w-full max-w-[1440px] items-center gap-4 px-5 sm:px-8 lg:px-10">
           <Logo />
 
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden flex-1 items-center justify-center gap-0.5 xl:flex">
             {nav.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-mist-700 transition-colors hover:bg-mist-100 hover:text-navy-900"
+                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-mist-700 transition-colors hover:bg-mist-100 hover:text-navy-900"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <a href={business.phoneHref} className="text-sm font-semibold text-navy-900">
+          <div className="hidden shrink-0 items-center gap-3 xl:flex">
+            <a
+              href={business.phoneHref}
+              className="hidden text-sm font-semibold text-navy-900 2xl:block"
+            >
               {business.phoneDisplay}
             </a>
             <Link href="/#contact" className="btn btn-primary px-5 py-2.5 text-sm">
@@ -62,7 +63,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="grid h-10 w-10 place-items-center rounded-lg border border-mist-200 bg-white/70 text-navy-900 lg:hidden"
+            className="ml-auto grid h-10 w-10 place-items-center rounded-lg border border-mist-200 bg-white text-navy-900 xl:hidden"
             aria-label="Open menu"
           >
             <Icon name="menu" className="h-5 w-5" />

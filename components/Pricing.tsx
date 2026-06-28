@@ -11,7 +11,7 @@ export default function Pricing() {
     <section id="pricing" className="relative bg-white py-20 lg:py-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="Annual Service Contracts"
+          eyebrow="Annual Maintenance Contracts"
           title={
             <>
               Predictable costs. <span className="text-brand">Reliable service.</span>

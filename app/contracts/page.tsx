@@ -15,9 +15,9 @@ import { contractsPage, contractsFaqs } from "@/lib/content";
 import { buildMetadata, JsonLd, serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Annual Service Contracts Dubai | Residential & Commercial AMC | Arcta Group",
+  title: "Annual Maintenance Contracts Dubai | Residential & Commercial AMC | Arcta Group",
   description:
-    "Annual service contracts for residential and commercial properties in Dubai and the UAE. AC maintenance, priority callouts, preventative care and fixed transparent pricing from Arcta Group.",
+    "Annual maintenance contracts for residential and commercial properties in Dubai and the UAE. AC maintenance, priority callouts, preventative care and fixed transparent pricing from Arcta Group.",
   path: "/contracts",
   keywords: [
     "annual service contract Dubai",
@@ -44,7 +44,7 @@ export default function ContractsPage() {
           }
           description={contractsPage.hero.description}
           icon="document"
-          crumbs={[{ label: "Annual Service Contracts", href: "/contracts" }]}
+          crumbs={[{ label: "Annual Maintenance Contracts", href: "/contracts" }]}
           secondaryCta={{ label: "View Plans", href: "#pricing" }}
           highlights={contractsPage.hero.highlights}
         />
@@ -91,7 +91,7 @@ export default function ContractsPage() {
             <SectionHeading
               eyebrow="What Each Plan Covers"
               title="Complete property care under one agreement"
-              description="Your annual service contract bundles the maintenance your property needs most — with scheduled visits, documented reports and priority response when it matters."
+              description="Your annual maintenance contract bundles the maintenance your property needs most — with scheduled visits, documented reports and priority response when it matters."
             />
             <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {contractsPage.coverage.map((item, i) => (
@@ -165,7 +165,7 @@ export default function ContractsPage() {
         <BenefitGrid
           eyebrow="Contract Benefits"
           title="The smart way to maintain property"
-          description="An annual service contract turns unpredictable maintenance into a fixed, reliable service you never have to think about."
+          description="An annual maintenance contract turns unpredictable maintenance into a fixed, reliable service you never have to think about."
           benefits={contractsPage.benefits}
         />
 
@@ -174,10 +174,10 @@ export default function ContractsPage() {
         </div>
         <FAQ items={contractsFaqs} />
         <ServiceEnquiry
-          title="Request an Annual Service Contract Quote"
+          title="Request an Annual Maintenance Contract Quote"
           description="Tell us about your property or portfolio and we'll build a contract that fits — free and returned within the hour."
           ctaLabel="Request Quote"
-          whatsappText="Hi Arcta Group, I'd like to request an annual service contract quote for my property."
+          whatsappText="Hi Arcta Group, I'd like to request an annual maintenance contract quote for my property."
         />
       </main>
       <Footer />
@@ -185,15 +185,15 @@ export default function ContractsPage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "Annual Service Contracts",
+            name: "Annual Maintenance Contracts",
             description: contractsPage.hero.description,
             path: "/contracts",
-            serviceType: "Annual Service Contract",
+            serviceType: "Annual Maintenance Contract",
           }),
           faqSchema(contractsFaqs),
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Annual Service Contracts", path: "/contracts" },
+            { name: "Annual Maintenance Contracts", path: "/contracts" },
           ]),
         ]}
       />
