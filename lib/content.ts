@@ -345,12 +345,12 @@ export const contractsFaqs: Faq[] = [
   {
     question: "What does an Arcta Group home health plan include?",
     answer:
-      "Our Essential Plan includes three full AC services a year, a full duct deep clean and sanitisation, a coil strip-down and internal restore, two professional deep cleans (steam, electrostatic and ozone), unlimited 60-minute priority callouts, written reports with before and after photos and an annual home health report. The Pure Home Plan adds whole-home water filtration supply and installation, your first filter replacement and priority scheduling.",
+      "Our Annual Care Plan includes three Essential AC services per year (every four months), one duct clean, one coil clean and two full apartment deep cleans. The Villa Care Plan includes everything in the Annual Care Plan plus a 3-stage water filtration system with supply and installation.",
   },
   {
-    question: "What is the difference between the Essential and Pure Home plans?",
+    question: "What is the difference between the Annual Care and Villa Care plans?",
     answer:
-      "Both plans protect the air you breathe and the surfaces you touch with scheduled AC servicing, duct and coil care and professional deep cleans. The Pure Home Plan includes everything in Essential and adds whole-home water filtration — supply, installation, your first filter replacement and a water quality report before and after installation.",
+      "Both plans include scheduled AC servicing, duct and coil cleaning, and two full apartment deep cleans each year. The Villa Care Plan adds a 3-stage water filtration system — supplied and installed — for cleaner water throughout your home.",
   },
   {
     question: "Why choose a yearly plan over one-off repairs?",
@@ -838,37 +838,29 @@ export type PricingTier = {
 
 export const pricing: PricingTier[] = [
   {
-    name: "Essential Plan",
-    tagline: "Clean Air. Healthy Home.",
+    name: "Annual Care Plan",
     priceLabel: "Tailored Quote",
-    priceNote: "based on your home",
-    description:
-      "Year-round protection for the air you breathe and the surfaces you touch.",
+    priceNote: "based on your property",
+    description: "Scheduled AC care, duct and coil cleaning, plus two full deep cleans each year.",
     features: [
-      "3 × full AC service per year",
-      "1 × full duct deep clean & sanitisation",
-      "1 × full coil strip-down & internal restore",
-      "2 × professional deep clean (steam, electrostatic & ozone)",
-      "Unlimited priority callouts — 60 minute response",
-      "Written report & before/after photos every visit",
-      "Annual home health report",
-      "20% discount on all additional services",
-      "Satisfaction guarantee — we return free if you're not happy",
+      "3× Essential AC Service (every 4 months)",
+      "1× Duct Clean",
+      "1× Coil Clean",
+      "2× Full Apartment Deep Clean",
     ],
     cta: { label: "Get a Quote", href: "/#contact" },
   },
   {
-    name: "Pure Home Plan",
-    tagline: "Clean Air. Pure Water. Healthy Home.",
+    name: "Villa Care Plan",
     priceLabel: "Tailored Quote",
-    priceNote: "based on your home",
-    description: "Everything in Essential, plus whole-home water filtration.",
+    priceNote: "based on your villa",
+    description: "Everything in the Annual Care Plan, plus a 3-stage water filtration system.",
     features: [
-      "Everything in the Essential Plan",
-      "Water filtration system supply & installation",
-      "First filter replacement included",
-      "Water quality report before & after installation",
-      "Priority scheduling — your jobs booked first",
+      "3× Essential AC Service (every 4 months)",
+      "1× Duct Clean",
+      "1× Coil Clean",
+      "2× Full Apartment Deep Clean",
+      "3-stage water filtration system (supply + installation)",
     ],
     cta: { label: "Get a Quote", href: "/#contact" },
     highlighted: true,
