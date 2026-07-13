@@ -1,9 +1,16 @@
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    formats: ["image/avif", "image/webp"],
-  },
+  ...(isGithubPages
+    ? {
+        output: "export",
+        images: { unoptimized: true },
+      }
+    : {
+        images: { formats: ["image/avif", "image/webp"] },
+      }),
   async redirects() {
     return [
       {

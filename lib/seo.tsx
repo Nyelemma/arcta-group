@@ -47,7 +47,7 @@ export const localBusinessSchema = {
   description:
     "Premium AC maintenance, duct cleaning, home sanitisation, water filtration, snagging inspections and property maintenance services across the UAE — creating cleaner air and healthier homes.",
   url: SITE_URL,
-  image: `${SITE_URL}/opengraph-image`,
+  image: `${SITE_URL}/images/hero/hero.png`,
   logo: {
     "@type": "ImageObject",
     url: `${SITE_URL}/icon.svg`,

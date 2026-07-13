@@ -48,11 +48,20 @@ export const metadata: Metadata = {
     siteName: business.name,
     type: "website",
     locale: "en_AE",
+    images: [
+      {
+        url: `${SITE_URL}/images/hero/hero.png`,
+        width: 1840,
+        height: 244,
+        alt: business.logoAlt,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [`${SITE_URL}/images/hero/hero.png`],
   },
   robots: {
     index: true,
