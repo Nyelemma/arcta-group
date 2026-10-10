@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SITE_URL, business, seoKeywords } from "@/lib/content";
 import { JsonLd, localBusinessSchema, websiteSchema } from "@/lib/seo";
@@ -17,6 +18,8 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-display",
   display: "swap",
 });
+
+const GOOGLE_TAG_ID = "AW-18495094633";
 
 const TITLE = "Arcta Group | Premium AC Maintenance & Property Services Across The UAE";
 const DESCRIPTION =
@@ -91,6 +94,16 @@ export default function RootLayout({
         </a>
         {children}
         <JsonLd data={[localBusinessSchema, websiteSchema]} />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GOOGLE_TAG_ID}');`}
+        </Script>
       </body>
     </html>
   );
